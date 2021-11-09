@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Box, Button, Container, Typography } from '@mui/material'
 import Copyright from '../src/Copyright';
+import About from './about';
 
 export default function Index() {
 
@@ -13,6 +14,42 @@ export default function Index() {
         <Button variant="contained" >Primary</Button>
         <Copyright />
       </Box>
+      <Box sx={{ my: 4 }}>
+        <Typography variant="h4" component="h1" gutterBottom>
+          Empezando el portafolio con Next, TS y MUI
+        </Typography>
+        <Button variant="contained" >Primary</Button>
+        <Copyright />
+      </Box>
+      <Box sx={{ my: 4 }}>
+        <Typography variant="h4" component="h1" gutterBottom>
+          Empezando el portafolio con Next, TS y MUI
+        </Typography>
+        <Button variant="contained" >Primary</Button>
+        <Copyright />
+      </Box>
+      <Box sx={{ my: 4 }}>
+        <Typography variant="h4" component="h1" gutterBottom>
+          Empezando el portafolio con Next, TS y MUI
+        </Typography>
+        <Button variant="contained" >Primary</Button>
+        <Copyright />
+      </Box>
+      <Box sx={{ my: 4 }}>
+        <Typography variant="h4" component="h1" gutterBottom>
+          Empezando el portafolio con Next, TS y MUI
+        </Typography>
+        <Button variant="contained" >Primary</Button>
+        <Copyright />
+      </Box>
+      <Box sx={{ my: 4 }}>
+        <Typography variant="h4" component="h1" gutterBottom>
+          Empezando el portafolio con Next, TS y MUI
+        </Typography>
+        <Button variant="contained" >Primary</Button>
+        <Copyright />
+      </Box>
+      <About />
     </Container>
   );
 }
