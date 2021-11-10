@@ -1,13 +1,12 @@
 import { createTheme, responsiveFontSizes } from '@mui/material';
 import { cyan, pink, red } from '@mui/material/colors';
 
-// Create a theme instance.
 const theme = responsiveFontSizes(
   createTheme({
     palette: {
       mode: 'dark',
-      primary: cyan,
-      secondary: pink,
+      primary: pink,
+      secondary: cyan,
       error: {
         main: red[500],
       },
@@ -26,7 +25,20 @@ const theme = responsiveFontSizes(
         styleOverrides: `
           html {
             scroll-behavior: smooth;
+            -webkit-scroll-behavior: smooth;
           }
+          ::-webkit-scrollbar {
+            width: 8px;
+          }
+          ::-webkit-scrollbar-track {
+            background: trasparent; 
+          }
+          ::-webkit-scrollbar-thumb {
+            background: ${pink[700]};
+            border-radius: 8px;
+          }
+          ::-webkit-scrollbar-thumb:hover {
+            background: #555;
         `,
       },
     },

@@ -3,11 +3,11 @@ import Head from 'next/head';
 import { AppProps } from 'next/app';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import { CacheProvider, EmotionCache } from '@emotion/react';
-import theme from '../theme';
+import { CacheProvider, EmotionCache, useTheme } from '@emotion/react';
 import createEmotionCache from '../src/createEmotionCache';
 import Navbar from '../components/Navbar';
-
+import Footer from '../components/Footer';
+import theme from '../theme'
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
 
@@ -15,7 +15,7 @@ interface MyAppProps extends AppProps {
   emotionCache?: EmotionCache;
 }
 
-export default function MyApp(props: MyAppProps) {
+const App = (props: MyAppProps) => {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
   return (
     <CacheProvider value={emotionCache}>
@@ -27,7 +27,9 @@ export default function MyApp(props: MyAppProps) {
         <CssBaseline />
         <Navbar />
         <Component {...pageProps} />
+        <Footer />
       </ThemeProvider>
     </CacheProvider>
   );
 }
+export default App

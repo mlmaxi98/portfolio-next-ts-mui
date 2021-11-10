@@ -1,55 +1,32 @@
 import * as React from 'react';
+import Head from 'next/head';
 import { Box, Button, Container, Typography } from '@mui/material'
-import Copyright from '../src/Copyright';
 import About from './about';
-
+import Home from './home';
 export default function Index() {
 
   return (
-    <Container maxWidth="sm">
-      <Box sx={{ my: 4 }}>
-        <Typography variant="h4" component="h1" gutterBottom>
-          Empezando el portafolio con Next, TS y MUI
-        </Typography>
-        <Button variant="contained" >Primary</Button>
-        <Copyright />
-      </Box>
-      <Box sx={{ my: 4 }}>
-        <Typography variant="h4" component="h1" gutterBottom>
-          Empezando el portafolio con Next, TS y MUI
-        </Typography>
-        <Button variant="contained" >Primary</Button>
-        <Copyright />
-      </Box>
-      <Box sx={{ my: 4 }}>
-        <Typography variant="h4" component="h1" gutterBottom>
-          Empezando el portafolio con Next, TS y MUI
-        </Typography>
-        <Button variant="contained" >Primary</Button>
-        <Copyright />
-      </Box>
-      <Box sx={{ my: 4 }}>
-        <Typography variant="h4" component="h1" gutterBottom>
-          Empezando el portafolio con Next, TS y MUI
-        </Typography>
-        <Button variant="contained" >Primary</Button>
-        <Copyright />
-      </Box>
-      <Box sx={{ my: 4 }}>
-        <Typography variant="h4" component="h1" gutterBottom>
-          Empezando el portafolio con Next, TS y MUI
-        </Typography>
-        <Button variant="contained" >Primary</Button>
-        <Copyright />
-      </Box>
-      <Box sx={{ my: 4 }}>
-        <Typography variant="h4" component="h1" gutterBottom>
-          Empezando el portafolio con Next, TS y MUI
-        </Typography>
-        <Button variant="contained" >Primary</Button>
-        <Copyright />
-      </Box>
+    <>
+      <Head>
+        <title>Joaquín Maxi Cardozo | Full Stack Web Developer</title>
+        <meta content="Un Full Stack Developer con ganas de buscar nuevos retos" name="description" />
+        <meta content="portfolio" name="keywords" />
+        <meta content="English" name="language" />
+        <meta content="Joaquín Cardozo" name="author" />
+        <link href="/favicon.ico" rel="icon" />
+        <meta key="ogimage" content="https://pngimg.com/uploads/letter_j/letter_j_PNG51.png" property="og:image" />
+      </Head>
+      <Home />
       <About />
-    </Container>
+      <About />
+      <About />
+      <About />
+      <About />
+      <About />
+      <About />
+      <About />
+      <About />
+      <About />
+    </>
   );
 }
