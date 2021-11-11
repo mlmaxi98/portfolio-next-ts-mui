@@ -8,6 +8,7 @@ import createEmotionCache from '../src/createEmotionCache';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import theme from '../theme'
+import Particles from '../components/Particles'
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
 
@@ -25,6 +26,7 @@ const App = (props: MyAppProps) => {
       </Head>
       <ThemeProvider theme={theme}>
         <CssBaseline />
+        <Particles />
         <Navbar />
         <Component {...pageProps} />
         <Footer />

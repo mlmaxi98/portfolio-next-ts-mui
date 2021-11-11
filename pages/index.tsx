@@ -18,15 +18,6 @@ export default function Index() {
       </Head>
       <Home />
       <About />
-      <About />
-      <About />
-      <About />
-      <About />
-      <About />
-      <About />
-      <About />
-      <About />
-      <About />
     </>
   );
 }

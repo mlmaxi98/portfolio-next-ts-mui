@@ -11,7 +11,11 @@ const Home = () => {
                     justifyContent: 'center',
                 }}
             >
-
+                <Grid >
+                    <Typography>
+                        Soy Joaquín Maximiliano Cardozo y soy un Full Stack Web Developer
+                    </Typography>
+                </Grid>
             </Container>
         </Box>
     );
