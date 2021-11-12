@@ -1,37 +1,44 @@
+import { useTheme } from "@mui/material";
 import Parts from "react-tsparticles";
-const Particles = () => {
+
+interface Props {
+    color: boolean;
+}
+const Particles = (props: Props) => {
+    const theme = useTheme()
+    const { color } = props;
     return (
         <Parts
             options={{
                 fpsLimit: 60,
                 particles: {
                     color: {
-                        value: "#ffffff",
+                        value: color ? theme.palette.secondary.main : theme.palette.primary.main,
                     },
                     links: {
-                        color: "#ffffff",
+                        color: color ? theme.palette.secondary.main : theme.palette.primary.main,
                         distance: 150,
                         enable: true,
                         opacity: 0.5,
                         width: 1,
                     },
-                    collisions: {
+                    /* collisions: {
                         enable: true,
-                    },
+                    }, */
                     move: {
                         direction: "none",
                         enable: true,
                         outMode: "bounce",
                         random: false,
-                        speed: 6,
-                        straight: false,
+                        speed: 4,
+                        //straight: false,
                     },
                     number: {
                         density: {
                             enable: true,
                             value_area: 800,
                         },
-                        value: 30,
+                        value: 45,
                     },
                     opacity: {
                         value: 0.5,
@@ -44,7 +51,7 @@ const Particles = () => {
                         value: 5,
                     },
                 },
-                detectRetina: true,
+                //detectRetina: true,
             }}
         />
     )

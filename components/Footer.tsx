@@ -1,13 +1,18 @@
-import { Box, Typography, Link } from '@mui/material/';
 import GoTopButton from './goTopButton';
-
-const Footer = () => {
+import { Box, Typography, Link } from '@mui/material/';
+import { useTheme } from "@mui/material";
+interface Props {
+    color: boolean;
+}
+const Footer = (props: Props) => {
+    const theme = useTheme()
+    const { color } = props;
     return (
         <>
-            <GoTopButton />
+            <GoTopButton color={color} />
             <Box
                 component="footer"
-                sx={{ py: 5, bgcolor: (theme) => theme.palette.grey[900], mt: 4 }}
+                sx={{ py: 5, bgcolor: (color ? theme.palette.secondary.main : theme.palette.primary.main), mt: 4 }}
             >
                 <Typography variant="body2" color="text.secondary" align="center">
                     {'Copyright © '}

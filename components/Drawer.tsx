@@ -8,10 +8,12 @@ import {
     Drawer,
     IconButton,
     Divider,
+    Switch,
 } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 //import Link from 'next/link';
-import { Inbox } from '@mui/icons-material';
+import { Inbox, Brightness4, Brightness7 } from '@mui/icons-material';
+
 
 interface Route {
     name: string;
@@ -22,11 +24,13 @@ interface Props {
     routes: Route[];
     open: boolean;
     onClose: () => void;
+    mode: boolean;
+    toggleMode: () => void;
 }
 
 const NavigationDrawer = (props: Props) => {
 
-    const { routes, open, onClose } = props;
+    const { routes, open, onClose, mode, toggleMode } = props;
 
     return (
         <Drawer
@@ -63,6 +67,12 @@ const NavigationDrawer = (props: Props) => {
                         <ListItemText primary={route.name} />
                     </ListItem>
                 ))}
+                <ListItem>
+                    <ListItemIcon>
+                        {mode ? <Brightness7 /> : <Brightness4 />}
+                    </ListItemIcon>
+                    <Switch checked={mode} onChange={toggleMode} />
+                </ListItem>
             </List>
         </Drawer >
     );

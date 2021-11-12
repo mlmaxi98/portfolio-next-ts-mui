@@ -10,6 +10,7 @@ import {
     useScrollTrigger,
     Container,
     IconButton,
+    Switch,
 } from '@mui/material';
 import { Menu as MenuIcon } from '@mui/icons-material';
 import { useTheme } from '@mui/material/styles';
@@ -21,7 +22,7 @@ interface Props {
 }
 interface NavProps {
     mode: boolean;
-    toggleColor: () => void;
+    toggleMode: () => void;
 }
 
 
@@ -35,9 +36,10 @@ const HideOnScroll = (props: Props) => {
         </Slide>
     );
 }
-const Navbar = () => {
+const Navbar = (props: NavProps) => {
     const theme = useTheme();
-    const responsive = useMediaQuery(theme.breakpoints.up('md'));
+    const { mode, toggleMode } = props;
+    const responsive = !useMediaQuery(theme.breakpoints.up('md'));
     const [mobileOpen, setMobileOpen] = useState(false);
 
     const handleDrawerToggle = () => {
@@ -60,35 +62,37 @@ const Navbar = () => {
                     <Container maxWidth="lg">
                         <Toolbar disableGutters sx={{ display: 'flex', justifyContent: 'space-between' }}>
 
-                            {/* <Link href="/#"> */}
-                                <Typography sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                                    <TypeAnimation
-                                        sequence={[
-                                            `<Joaquin`, 2000,
-                                            `<Maxi`, 2000,
-                                            `<Cardozo`, 2000,
-                                        ]}
-                                        repeat={Infinity}
-                                        wrapper="h4"
-                                    />
-                                    {' />'}
-                                </Typography>
-                            {/* </Link> */}
+                            <Typography sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                <TypeAnimation
+                                    sequence={[
+                                        `<Joaquin`, 2000,
+                                        `<Maxi`, 2000,
+                                        `<Cardozo`, 2000,
+                                    ]}
+                                    repeat={Infinity}
+                                    wrapper="h4"
+                                />
+                                {' />'}
+                            </Typography>
                             <Box sx={{ display: 'flex' }} >
                                 {
-                                    responsive
-                                        ? Routes.map(route =>
-                                            <Link
-                                                href={route.link}
-                                                key={route.name}
-                                            >
-                                                <Button
-                                                    variant='text'
-                                                    color='info'
+                                    !responsive
+                                        ?
+                                        <>
+                                            {Routes.map(route =>
+                                                <Link
+                                                    href={route.link}
+                                                    key={route.name}
                                                 >
-                                                    {route.name}
-                                                </Button>
-                                            </Link>)
+                                                    <Button
+                                                        variant='text'
+                                                        color='info'
+                                                    >
+                                                        {route.name}
+                                                    </Button>
+                                                </Link>)}
+                                            <Switch checked={mode} onChange={toggleMode} />
+                                        </>
                                         : <IconButton
                                             aria-label="Open Navigation"
                                             size="large"
@@ -104,11 +108,13 @@ const Navbar = () => {
                 </AppBar>
             </HideOnScroll>
             {
-                !responsive
+                responsive
                 && <NavigationDrawer
                     routes={Routes}
                     open={mobileOpen}
                     onClose={handleDrawerToggle}
+                    mode={mode}
+                    toggleMode={toggleMode}
                 />
             }
         </Box >
