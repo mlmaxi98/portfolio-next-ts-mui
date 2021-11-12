@@ -88,7 +88,7 @@ const Navbar = (props: NavProps) => {
                                         >
                                             <MenuIcon
                                                 fontSize="large"
-                                                color={mode ? 'secondary' : 'inherit'}
+                                                sx={{ color: mode ? theme.palette.secondary.main : theme.palette.primary.contrastText }}
                                             />
                                         </IconButton>
                                         : <>
