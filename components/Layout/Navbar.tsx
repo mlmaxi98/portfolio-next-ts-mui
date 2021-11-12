@@ -11,11 +11,14 @@ import {
     Container,
     IconButton,
     Switch,
+    FormGroup,
+    FormControlLabel
 } from '@mui/material';
 import { Menu as MenuIcon } from '@mui/icons-material';
 import { useTheme } from '@mui/material/styles';
 import Link from 'next/link';
-import NavigationDrawer from './Drawer';
+import NavigationDrawer from '../Drawer';
+import { Brightness4, Brightness7 } from '@mui/icons-material';
 import TypeAnimation from 'react-type-animation';
 interface Props {
     children: React.ReactElement;
@@ -76,9 +79,19 @@ const Navbar = (props: NavProps) => {
                             </Typography>
                             <Box sx={{ display: 'flex' }} >
                                 {
-                                    !responsive
-                                        ?
-                                        <>
+                                    responsive
+                                        ? <IconButton
+                                            aria-label="Open Navigation"
+                                            size="large"
+                                            sx={{ marginLeft: 'auto' }}
+                                            onClick={handleDrawerToggle}
+                                        >
+                                            <MenuIcon
+                                                fontSize="large"
+                                                color={mode ? 'secondary' : 'inherit'}
+                                            />
+                                        </IconButton>
+                                        : <>
                                             {Routes.map(route =>
                                                 <Link
                                                     href={route.link}
@@ -86,21 +99,19 @@ const Navbar = (props: NavProps) => {
                                                 >
                                                     <Button
                                                         variant='text'
-                                                        color='info'
+                                                        color={mode ? 'secondary' : 'inherit'}
                                                     >
                                                         {route.name}
                                                     </Button>
                                                 </Link>)}
-                                            <Switch checked={mode} onChange={toggleMode} />
+                                            <FormControlLabel
+                                                control={
+                                                    <Switch checked={mode} onChange={toggleMode} color='secondary' />}
+                                                label={mode ? <Brightness7 sx={{ display: 'flex' }} /> : <Brightness4 sx={{ display: 'flex' }} />}
+                                                labelPlacement="start"
+
+                                            />
                                         </>
-                                        : <IconButton
-                                            aria-label="Open Navigation"
-                                            size="large"
-                                            sx={{ marginLeft: 'auto' }}
-                                            onClick={handleDrawerToggle}
-                                        >
-                                            <MenuIcon color="secondary" fontSize="large" />
-                                        </IconButton>
                                 }
                             </Box>
                         </Toolbar>

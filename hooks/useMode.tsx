@@ -6,13 +6,13 @@ import { cyan, pink, red } from '@mui/material/colors';
 const useMode = () => {
     const [mode, setMode] = useState(false)
     const toggleMode = () => setMode(!mode)
-    const colorBar = mode ? pink[500] : cyan[500]
+    const colorBar = !mode ? pink[500] : cyan[500]
     const theme = createTheme(
         {
             palette: {
                 mode: mode ? 'dark' : 'light',
-                primary: cyan,
-                secondary: pink,
+                primary: pink,
+                secondary: cyan,
                 error: {
                     main: red[500],
                 },
@@ -41,7 +41,6 @@ const useMode = () => {
                 }
                 ::-webkit-scrollbar-thumb {
                   background: ${colorBar};
-                  border-radius: 8px;
                 }
                 ::-webkit-scrollbar-thumb:hover {
                   background: #555;

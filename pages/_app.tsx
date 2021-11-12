@@ -5,8 +5,8 @@ import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import { CacheProvider, EmotionCache } from '@emotion/react';
 import createEmotionCache from '../src/createEmotionCache';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
+import Navbar from '../components/Layout/Navbar';
+import Footer from '../components/Layout/Footer';
 import Particles from '../components/Particles'
 import useMode from '../hooks/useMode'
 
