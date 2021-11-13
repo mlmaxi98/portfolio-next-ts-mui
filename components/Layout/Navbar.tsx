@@ -21,7 +21,7 @@ import {
 import { useTheme } from '@mui/material/styles';
 import Link from 'next/link';
 import NavigationDrawer from '../Drawer';
-import TypeAnimation from 'react-type-animation';
+//import TypeAnimation from 'react-type-animation';
 interface Props {
     children: React.ReactElement;
 }
@@ -66,7 +66,7 @@ const Navbar = (props: NavProps) => {
                         <Toolbar disableGutters sx={{ display: 'flex', justifyContent: 'space-between' }}>
 
                             <Typography sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                                <TypeAnimation
+                                {/* <TypeAnimation
                                     sequence={[
                                         `<Joaquin`, 2000,
                                         `<Maxi`, 2000,
@@ -75,7 +75,8 @@ const Navbar = (props: NavProps) => {
                                     repeat={Infinity}
                                     wrapper="h4"
                                 />
-                                {' />'}
+                                {' />'} */}
+                                {'<Maxi />'}
                             </Typography>
                             <Box sx={{ display: 'flex' }} >
                                 {
