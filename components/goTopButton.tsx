@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import Button, { ButtonProps } from '@mui/material/Button';
 import { Stack } from '@mui/material';
@@ -10,7 +9,7 @@ interface Props {
 
 const GoTopButton = (props: Props) => {
     const { color } = props;
-
+    const goTop = () => window.scrollTo({ top: 0, behavior: 'smooth' })
     const ring = keyframes`
         0% {
             width: 3rem;
@@ -30,7 +29,7 @@ const GoTopButton = (props: Props) => {
         fontSize: '1.5rem',
         letterSpacing: '1.3px',
         fontWeight: 700,
-        color: theme.palette.secondary.contrastText,
+        color: color ? theme.palette.secondary.contrastText : theme.palette.primary.contrastText,
         background: `linear-gradient(90deg, ${color ? theme.palette.secondary.dark : theme.palette.primary.dark} 0%, ${color ? theme.palette.secondary.main : theme.palette.primary.main} 100%)`,
         border: 'none',
         borderRadius: '1000px',
@@ -41,7 +40,7 @@ const GoTopButton = (props: Props) => {
         position: 'relative',
         padding: '10px',
         '&:hover, &:focus': {
-            color: theme.palette.secondary.contrastText,
+            color: color ? theme.palette.secondary.contrastText : theme.palette.primary.contrastText,
             transform: 'translateY(-6px)',
         },
         '&::before': {
@@ -58,8 +57,6 @@ const GoTopButton = (props: Props) => {
             opacity: 0,
             transition: 'all .3s ease-in-out 0s',
         },
-
-
         '&::after': {
             content: '""',
             width: '2rem',
@@ -83,7 +80,7 @@ const GoTopButton = (props: Props) => {
     }));
     return (
         <Stack direction="row" justifyContent="center" sx={{ height: '3rem' }}>
-            <CustomButton variant="outlined" color={color ? 'secondary' : 'primary'} onClick={() => { window.scrollTo({ top: 0, behavior: 'smooth' }) }} >
+            <CustomButton variant="outlined" onClick={goTop} >
                 <Top />
             </CustomButton>
         </Stack>

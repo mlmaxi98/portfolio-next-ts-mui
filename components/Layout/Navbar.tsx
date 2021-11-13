@@ -21,7 +21,7 @@ import {
 import { useTheme } from '@mui/material/styles';
 import Link from 'next/link';
 import NavigationDrawer from '../Drawer';
-//import TypeAnimation from 'react-type-animation';
+import Typing from 'react-typing-effect';
 interface Props {
     children: React.ReactElement;
 }
@@ -64,19 +64,20 @@ const Navbar = (props: NavProps) => {
                 <AppBar elevation={0}>
                     <Container maxWidth="lg">
                         <Toolbar disableGutters sx={{ display: 'flex', justifyContent: 'space-between' }}>
-
-                            <Typography sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                                {/* <TypeAnimation
-                                    sequence={[
-                                        `<Joaquin`, 2000,
-                                        `<Maxi`, 2000,
-                                        `<Cardozo`, 2000,
+                            <Typography sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700 }}>
+                                {'<'}
+                                <Typing
+                                    text={[
+                                        `Joaquin`,
+                                        `Maxi`,
+                                        `Cardozo`
                                     ]}
-                                    repeat={Infinity}
-                                    wrapper="h4"
+                                    speed={50}
+                                    eraseSpeed={100}
+                                    typingDelay={1000}
+                                    eraseDelay={2000}
                                 />
-                                {' />'} */}
-                                {'<Maxi />'}
+                                {' />'}
                             </Typography>
                             <Box sx={{ display: 'flex' }} >
                                 {
@@ -110,7 +111,6 @@ const Navbar = (props: NavProps) => {
                                                     <Switch checked={mode} onChange={toggleMode} color='secondary' />}
                                                 label={mode ? <Sun sx={{ display: 'flex' }} /> : <Moon sx={{ display: 'flex' }} />}
                                                 labelPlacement="start"
-
                                             />
                                         </>
                                 }

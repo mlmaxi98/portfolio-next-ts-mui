@@ -9,9 +9,15 @@ import {
     IconButton,
     Divider,
     Switch,
+    useTheme,
+    FormControlLabel,
 } from '@mui/material';
-import CloseIcon from '@mui/icons-material/Close';
-import { Inbox, Brightness4, Brightness7 } from '@mui/icons-material';
+import {
+    Close,
+    Inbox,
+    Brightness4 as Moon,
+    Brightness7 as Sun,
+} from '@mui/icons-material';
 
 
 interface Route {
@@ -28,7 +34,6 @@ interface Props {
 }
 
 const NavigationDrawer = (props: Props) => {
-
     const { routes, open, onClose, mode, toggleMode } = props;
 
     return (
@@ -41,15 +46,26 @@ const NavigationDrawer = (props: Props) => {
             <Box
                 sx={{
                     display: 'flex',
-                    justifyContent: 'flex-end',
+                    justifyContent: 'space-between',
                     alignItems: 'center',
-                    px: 1,
                     minHeight: { xs: 48, sm: 64 },
                 }}
             >
                 <IconButton size="large" onClick={onClose}>
-                    <CloseIcon color="secondary" fontSize="large" />
+                    <Close color={mode ? "secondary" : "primary"} fontSize="large" />
                 </IconButton>
+                <FormControlLabel
+                    control={<Switch
+                        checked={mode}
+                        onChange={toggleMode}
+                        color='secondary'
+                    />}
+                    label={mode
+                        ? <Sun sx={{ display: 'flex' }} />
+                        : <Moon sx={{ display: 'flex' }} />}
+                    labelPlacement="start"
+                    sx={{ paddingRight: 2 }}
+                />
             </Box>
             <Divider />
             <List>
@@ -60,18 +76,10 @@ const NavigationDrawer = (props: Props) => {
                         onClick={onClose}
                         {...{ component: Link, href: route.link, noLinkStyle: true }}
                     >
-                        <ListItemIcon>
-                            <Inbox />
-                        </ListItemIcon>
+                        <ListItemIcon><Inbox /></ListItemIcon>
                         <ListItemText primary={route.name} />
                     </ListItem>
                 ))}
-                <ListItem>
-                    <ListItemIcon>
-                        {mode ? <Brightness7 /> : <Brightness4 />}
-                    </ListItemIcon>
-                    <Switch checked={mode} onChange={toggleMode} />
-                </ListItem>
             </List>
         </Drawer >
     );
