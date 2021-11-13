@@ -9,7 +9,6 @@ import {
     IconButton,
     Divider,
     Switch,
-    useTheme,
     FormControlLabel,
 } from '@mui/material';
 import {
