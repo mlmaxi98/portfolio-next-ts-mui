@@ -1,4 +1,4 @@
-import { Box, Container, Button, Typography, Grid } from '@mui/material/';
+import { Box, Container, Typography, Grid } from '@mui/material/';
 
 const Home = () => {
     return (

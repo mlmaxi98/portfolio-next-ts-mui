@@ -15,7 +15,15 @@ const Footer = (props: Props) => {
                 component="footer"
                 sx={{ py: 5, bgcolor: (color ? theme.palette.secondary.dark : theme.palette.primary.main), mt: 4 }}
             >
-                <Typography variant="body1" align="center" color={theme.palette.mode === 'dark' ? 'info' : theme.palette.primary.contrastText} sx={{ fontWeight: 700 }}>
+                <Typography
+                    variant="body1"
+                    align="center"
+                    color={
+                        theme.palette.mode === 'dark'
+                            ? 'info'
+                            : theme.palette.primary.contrastText}
+                    sx={{ fontWeight: 700 }}
+                >
                     {'Copyright © '}
                     <Link color="inherit" href="https://mui.com/">
                         Joaquín Maxi Cardozo

@@ -13,11 +13,14 @@ import {
     Switch,
     FormControlLabel
 } from '@mui/material';
-import { Menu as MenuIcon } from '@mui/icons-material';
+import {
+    Menu as MenuIcon,
+    Brightness7 as Sun,
+    Brightness4 as Moon
+} from '@mui/icons-material';
 import { useTheme } from '@mui/material/styles';
 import Link from 'next/link';
 import NavigationDrawer from '../Drawer';
-import { Brightness4, Brightness7 } from '@mui/icons-material';
 import TypeAnimation from 'react-type-animation';
 interface Props {
     children: React.ReactElement;
@@ -26,7 +29,6 @@ interface NavProps {
     mode: boolean;
     toggleMode: () => void;
 }
-
 
 const HideOnScroll = (props: Props) => {
     const { children } = props;
@@ -58,7 +60,6 @@ const Navbar = (props: NavProps) => {
 
     return (
         <Box component="section">
-
             <HideOnScroll>
                 <AppBar elevation={0}>
                     <Container maxWidth="lg">
@@ -106,7 +107,7 @@ const Navbar = (props: NavProps) => {
                                             <FormControlLabel
                                                 control={
                                                     <Switch checked={mode} onChange={toggleMode} color='secondary' />}
-                                                label={mode ? <Brightness7 sx={{ display: 'flex' }} /> : <Brightness4 sx={{ display: 'flex' }} />}
+                                                label={mode ? <Sun sx={{ display: 'flex' }} /> : <Moon sx={{ display: 'flex' }} />}
                                                 labelPlacement="start"
 
                                             />
