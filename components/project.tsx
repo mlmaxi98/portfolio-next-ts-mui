@@ -44,6 +44,7 @@ const Project = ({
                         sm: '50%'
                     },
                     objectFit: 'cover',
+                    zIndex: 2
                 }}
             />
             <CardContent sx={{
@@ -70,8 +71,9 @@ const Project = ({
                             <Chip
                                 key={lang}
                                 label={lang}
-                                color="primary"
+                                color={theme.palette.mode === 'dark' ? "primary" : "secondary"}
                                 size="small"
+                                //variant='outlined'
                             />
                         )
                     }

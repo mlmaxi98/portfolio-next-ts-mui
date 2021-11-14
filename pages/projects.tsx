@@ -22,6 +22,7 @@ const Projects = () => {
                         <Grid
                             key={project.title}
                             container
+                            
                         >
                             <Project
                                 description={project.description}

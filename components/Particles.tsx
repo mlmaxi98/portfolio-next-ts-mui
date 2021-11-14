@@ -46,6 +46,9 @@ const Particles = (props: Props) => {
                         random: true,
                         value: 5,
                     },
+                    zIndex: {
+                        opacityRate: 0.3,
+                    }
                 },
                 detectRetina: true,
             }}
