@@ -13,7 +13,7 @@ const Project = ({
     images,
     languages,
     title,
-    subtitle,
+    //subtitle,
 }: Project) => {
     const theme = useTheme()
     const cardDirection = direction ? 'row' : 'row-reverse'
