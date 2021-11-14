@@ -28,8 +28,8 @@ const Footer = (props: Props) => {
                             : theme.palette.primary.contrastText}
                     sx={{ fontWeight: 700 }}
                 >
-                    {'Copyright © '}
-                    <Link color="inherit" href="https://mui.com/">
+                    {'© '}
+                    <Link color="inherit" href="https://www.instagram.com/mlmaxi98/">
                         Joaquín Maxi Cardozo
                     </Link>{' '}
                     {new Date().getFullYear()}.

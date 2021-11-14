@@ -11,7 +11,8 @@ const Projects = () => {
             id="projects"
             sx={{
                 minHeight: '100vh',
-                my: 5
+                my: 5,
+                px: 2,
             }}>
             <Container
                 sx={{

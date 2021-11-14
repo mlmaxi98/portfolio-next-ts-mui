@@ -42,20 +42,22 @@ const Project = ({
                         md: '100%'
                     },
                     objectFit: 'cover',
-                    zIndex: 2
+                    zIndex: 2,
                 }}
             />
-            <CardContent sx={{
-                width: {
-                    xs: '100%',
-                    sm: '60%',
-                    md: '100%',
-                },
-                height: '100%',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'space-between',
-            }} >
+            <CardContent
+                sx={{
+                    width: {
+                        xs: '100%',
+                        sm: '60%',
+                        md: '100%',
+                    },
+                    height: '100%',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'space-between',
+                    zIndex: 2,
+                }} >
                 <Typography variant="h5" gutterBottom color={theme.palette.mode !== 'dark' ? "primary" : "secondary"}>
                     {title}
                 </Typography>
