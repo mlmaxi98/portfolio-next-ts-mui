@@ -1,4 +1,4 @@
-import { Box, Button, Card, CardActions, CardContent, CardMedia, Chip, Grid, Typography, useTheme } from '@mui/material'
+import { Button, Card, CardActions, CardContent, CardMedia, Chip, Grid, Typography, useTheme } from '@mui/material'
 interface Project {
     description: string;
     images: string;
