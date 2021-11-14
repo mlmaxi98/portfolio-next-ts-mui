@@ -1,4 +1,5 @@
 import { Box, Container, Typography, Grid } from '@mui/material/';
+import Title from '../components/Title';
 
 const Home = () => {
     return (
@@ -12,9 +13,10 @@ const Home = () => {
                 }}
             >
                 <Grid >
-                    <Typography>
+                    <Title size={1.5} title="Soy Joaquín Maximiliano Cardozo y soy un Full Stack Web Developer" />
+                    {/* <Typography>
                         Soy Joaquín Maximiliano Cardozo y soy un Full Stack Web Developer
-                    </Typography>
+                    </Typography> */}
                 </Grid>
             </Container>
         </Box>

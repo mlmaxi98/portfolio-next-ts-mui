@@ -2,6 +2,7 @@ import { Container, Grid, Box, Typography } from '@mui/material'
 import Project from '../components/project'
 import { myProjects } from '../components/Consts'
 import { useTheme } from '@mui/system'
+import Title from '../components/Title'
 
 const Projects = () => {
     const theme = useTheme()
@@ -20,8 +21,8 @@ const Projects = () => {
                     flexDirection: 'column',
                     justifyContent: 'center',
                 }}>
-
-                <Typography
+                <Title title="Proyectos" size={2.5} />
+                {/* <Typography
                     variant="h4"
                     color={theme.palette.mode === 'dark' ?
                         'primary' : 'secondary'}
@@ -31,7 +32,7 @@ const Projects = () => {
                     }}
                 >
                     Proyectos
-                </Typography>
+                </Typography> */}
                 <Grid
                     container
                     spacing={8}>

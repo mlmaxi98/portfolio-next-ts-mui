@@ -8,6 +8,7 @@ import {
 import { useTheme } from '@mui/system'
 import { techs } from '../components/Consts'
 import Skill from '../components/Skill';
+import Title from '../components/Title';
 
 const Skills = () => {
     const theme = useTheme()
@@ -29,7 +30,7 @@ const Skills = () => {
                 flexDirection: 'column',
                 justifyContent: 'center',
             }}>
-                <Typography variant="h4"
+                {/* <Typography variant="h4"
                     color={
                         theme.palette.mode === 'dark' ?
                             'primary' : 'secondary'}
@@ -38,8 +39,8 @@ const Skills = () => {
                         textAlign: 'center',
                     }}>
                     Habilidades
-                </Typography>
-
+                </Typography> */}
+                <Title title="Habilidades" size={2.5} />
                 <Grid container spacing={3} justifyContent='center'>
                     {
                         techs.map((tech) => (
