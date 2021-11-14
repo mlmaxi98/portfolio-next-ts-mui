@@ -1,13 +1,15 @@
-import About from './about';
+//import About from './about';
 import Home from './home';
 import Projects from './projects';
+import Skills from './skills';
 const Index = () => {
 
   return (
     <>
       <Home />
-      <About />
+      <Skills />
       <Projects />
+      {/* <About /> */}
     </>
   );
 }

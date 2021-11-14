@@ -7,8 +7,7 @@ interface Props {
     color: boolean;
 }
 
-const GoTopButton = (props: Props) => {
-    const { color } = props;
+const GoTopButton = ({ color }: Props) => {
     const goTop = () => window.scrollTo({ top: 0, behavior: 'smooth' })
     const ring = keyframes`
         0% {
@@ -24,6 +23,8 @@ const GoTopButton = (props: Props) => {
     `;
 
     const CustomButton = styled(Button)<ButtonProps>(({ theme }) => ({
+        display: 'flex',
+        alignItems: 'center',
         minWidth: '3rem',
         minHeight: '3rem',
         fontSize: '1.5rem',
@@ -45,6 +46,7 @@ const GoTopButton = (props: Props) => {
         },
         '&::before': {
             content: '""',
+            color: color ? theme.palette.secondary.contrastText : theme.palette.primary.contrastText,
             borderRadius: '1000px',
             width: '4rem',
             height: '4rem',
@@ -59,6 +61,7 @@ const GoTopButton = (props: Props) => {
         },
         '&::after': {
             content: '""',
+            color: color ? theme.palette.secondary.contrastText : theme.palette.primary.contrastText,
             width: '2rem',
             height: '2rem',
             borderRadius: '100%',
