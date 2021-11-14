@@ -22,16 +22,12 @@ const Particles = (props: Props) => {
                         opacity: 0.5,
                         width: 1,
                     },
-                    /* collisions: {
-                        enable: true,
-                    }, */
                     move: {
                         direction: "none",
                         enable: true,
                         outMode: "bounce",
                         random: false,
                         speed: 4,
-                        //straight: false,
                     },
                     number: {
                         density: {
@@ -51,7 +47,7 @@ const Particles = (props: Props) => {
                         value: 5,
                     },
                 },
-                //detectRetina: true,
+                detectRetina: true,
             }}
         />
     )

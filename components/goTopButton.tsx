@@ -80,7 +80,7 @@ const GoTopButton = (props: Props) => {
     }));
     return (
         <Stack direction="row" justifyContent="center" sx={{ height: '3rem' }}>
-            <CustomButton variant="outlined" onClick={goTop} >
+            <CustomButton onClick={goTop}>
                 <Top />
             </CustomButton>
         </Stack>

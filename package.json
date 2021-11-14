@@ -13,6 +13,7 @@
     "clsx": "latest",
     "framer-motion": "^5.2.1",
     "next": "latest",
+    "next-images": "^1.8.2",
     "react": "latest",
     "react-dom": "latest",
     "react-icons": "^4.3.1",
