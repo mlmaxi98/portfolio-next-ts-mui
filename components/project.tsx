@@ -1,5 +1,4 @@
-import { Box, Button, Card, CardActions, CardContent, CardMedia, Chip, Typography, useTheme, useMediaQuery } from '@mui/material'
-
+import { Box, Button, Card, CardActions, CardContent, CardMedia, Chip, Grid, Typography, useTheme } from '@mui/material'
 interface Project {
     description: string;
     images: string;
@@ -17,21 +16,19 @@ const Project = ({
     subtitle,
 }: Project) => {
     const theme = useTheme()
-    const media = useMediaQuery(theme.breakpoints.up('sm'))
-    const cardDirection = media ?
-        direction ?
-            'row' :
-            'row-reverse'
-        : 'column'
+    const cardDirection = direction ? 'row' : 'row-reverse'
     return (
         <Card
-            elevation={2}
+            elevation={4}
             sx={{
                 display: 'flex',
                 height: '100%',
                 width: '100%',
-                my: 4,
-                flexDirection: cardDirection,
+                flexDirection: {
+                    xs: 'column',
+                    sm: cardDirection,
+                    md: 'column'
+                },
             }}
         >
             <CardMedia
@@ -41,7 +38,8 @@ const Project = ({
                 sx={{
                     width: {
                         xs: '100%',
-                        sm: '50%'
+                        sm: '40%',
+                        md: '100%'
                     },
                     objectFit: 'cover',
                     zIndex: 2
@@ -50,37 +48,41 @@ const Project = ({
             <CardContent sx={{
                 width: {
                     xs: '100%',
-                    lg: '50%'
+                    sm: '60%',
+                    md: '100%',
                 },
+                height: '100%',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
             }} >
-                <Typography variant="h4" gutterBottom>
+                <Typography variant="h5" gutterBottom color={theme.palette.mode !== 'dark' ? "primary" : "secondary"}>
                     {title}
                 </Typography>
-                <Typography variant="h6" gutterBottom>
+                {/*   <Typography variant="h6" gutterBottom>
                     {subtitle}
-                </Typography>
-                <Typography variant="body1" gutterBottom>
+                </Typography> */}
+                <Typography variant="subtitle1" gutterBottom>
                     {description}
                 </Typography>
-                <Box>
+                <Grid container spacing={1} >
                     {
                         languages.map((lang) =>
-                            <Chip
-                                key={lang}
-                                label={lang}
-                                color={theme.palette.mode === 'dark' ? "primary" : "secondary"}
-                                size="small"
+                            <Grid item >
+                                <Chip
+                                    key={lang}
+                                    label={lang}
+                                    color={theme.palette.mode === 'dark' ? "primary" : "secondary"}
+                                    size="small"
                                 //variant='outlined'
-                            />
+                                />
+                            </Grid>
                         )
                     }
-                </Box>
+                </Grid>
                 <CardActions>
-                    <Button size="small">Share</Button>
-                    <Button size="small">Learn More</Button>
+                    <Button size="small">GitHub</Button>
+                    <Button size="small">Demo</Button>
                 </CardActions>
             </CardContent>
         </Card>

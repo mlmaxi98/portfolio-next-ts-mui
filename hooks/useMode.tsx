@@ -1,16 +1,16 @@
 import { useState } from "react";
 import { createTheme } from '@mui/material';
-import { cyan, pink } from '@mui/material/colors';
+import { cyan, purple } from '@mui/material/colors';
 
 const useMode = () => {
     const [mode, setMode] = useState(true)
     const toggleMode = () => setMode(!mode)
-    const colorBar = mode ? cyan[500] : pink[500]
-    const colorBarHover = mode ? cyan[700] : pink[700]
+    const colorBar = mode ? cyan[500] : purple[500]
+    const colorBarHover = mode ? cyan[700] : purple[700]
     const theme = createTheme({
         palette: {
             mode: mode ? 'dark' : 'light',
-            primary: pink,
+            primary: purple,
             secondary: cyan,
         },
         breakpoints: {

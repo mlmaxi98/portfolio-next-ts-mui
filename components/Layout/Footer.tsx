@@ -10,10 +10,14 @@ const Footer = (props: Props) => {
 
     return (
         <>
-            <GoTopButton color={color} />
+            <GoTopButton color={!color} />
             <Box
                 component="footer"
-                sx={{ py: 5, bgcolor: (color ? theme.palette.secondary.dark : theme.palette.primary.main), mt: 4 }}
+                sx={{
+                    py: 5,
+                    mt: 4,
+                    bgcolor: (color ? theme.palette.secondary.dark : theme.palette.primary.dark),
+                }}
             >
                 <Typography
                     variant="body1"
