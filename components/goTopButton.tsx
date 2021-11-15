@@ -11,7 +11,6 @@ interface Props {
 const GoTopButton = ({ color }: Props) => {
     const goTop = () => window.scrollTo({ top: 0, behavior: 'smooth' })
     const theme = useTheme()
-    const mode = theme.palette.mode === 'dark'
     const primary = theme.palette.primary
     const secondary = theme.palette.secondary
 
