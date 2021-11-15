@@ -1,11 +1,11 @@
 import { Container, Grid, Box } from '@mui/material'
 import Project from '../components/project'
 import { myProjects } from '../components/Consts'
-import { useTheme } from '@mui/system'
+//import { useTheme } from '@mui/system'
 import Title from '../components/Title'
 
 const Projects = () => {
-    const theme = useTheme()
+    //const theme = useTheme()
     return (
         <Box
             component="section"
