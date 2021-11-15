@@ -1,4 +1,4 @@
-import { Box, Container, Typography, Grid } from '@mui/material/';
+import { Box, Container, Grid } from '@mui/material/';
 import Title from '../components/Title';
 
 const Home = () => {
