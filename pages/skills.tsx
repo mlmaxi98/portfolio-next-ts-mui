@@ -4,13 +4,13 @@ import {
     Grid,
     Box,
 } from '@mui/material/';
-import { useTheme } from '@mui/system'
+//import { useTheme } from '@mui/system'
 import { techs } from '../components/Consts'
 import Skill from '../components/Skill';
 import Title from '../components/Title';
 
 const Skills = () => {
-    const theme = useTheme()
+    //const theme = useTheme()
     return (
         <Box
             component="section"
