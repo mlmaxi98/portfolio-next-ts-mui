@@ -1,4 +1,4 @@
-import { Container, Grid, Box, Typography } from '@mui/material'
+import { Container, Grid, Box } from '@mui/material'
 import Project from '../components/project'
 import { myProjects } from '../components/Consts'
 import { useTheme } from '@mui/system'
