@@ -63,7 +63,7 @@ const NavigationDrawer = (props: Props) => {
                         ? <Sun sx={{ display: 'flex' }} />
                         : <Moon sx={{ display: 'flex' }} />}
                     labelPlacement="start"
-                    sx={{ paddingRight: 2 }}
+                    sx={{ paddingRight: 2, marginRight: 0 }}
                 />
             </Box>
             <Divider />

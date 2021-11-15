@@ -43,7 +43,7 @@ const HideOnScroll = (props: Props) => {
 const Navbar = (props: NavProps) => {
     const theme = useTheme();
     const { mode, toggleMode } = props;
-    const responsive = !useMediaQuery(theme.breakpoints.up('md'));
+    const responsive = useMediaQuery(theme.breakpoints.down('md'));
     const [mobileOpen, setMobileOpen] = useState(false);
 
     const handleDrawerToggle = () => {
@@ -64,7 +64,7 @@ const Navbar = (props: NavProps) => {
                 <AppBar elevation={0}>
                     <Container maxWidth="lg">
                         <Toolbar disableGutters sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                            <Typography sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700 }}>
+                            <Typography sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700 }} component="span">
                                 {'<'}
                                 <Typing
                                     text={[

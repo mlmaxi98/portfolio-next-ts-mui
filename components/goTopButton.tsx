@@ -1,14 +1,20 @@
-import { styled } from '@mui/material/styles';
+import { styled, useTheme } from '@mui/material/styles';
 import Button, { ButtonProps } from '@mui/material/Button';
 import { Stack } from '@mui/material';
 import { keyframes } from '@mui/system'
 import { MdKeyboardArrowUp as Top } from "react-icons/md";
+
 interface Props {
     color: boolean;
 }
 
 const GoTopButton = ({ color }: Props) => {
     const goTop = () => window.scrollTo({ top: 0, behavior: 'smooth' })
+    const theme = useTheme()
+    const mode = theme.palette.mode === 'dark'
+    const primary = theme.palette.primary
+    const secondary = theme.palette.secondary
+
     const ring = keyframes`
         0% {
             width: 3rem;
@@ -22,7 +28,7 @@ const GoTopButton = ({ color }: Props) => {
         }
     `;
 
-    const CustomButton = styled(Button)<ButtonProps>(({ theme }) => ({
+    const CustomButton = styled(Button)<ButtonProps>(() => ({
         display: 'flex',
         alignItems: 'center',
         minWidth: '3rem',
@@ -30,28 +36,28 @@ const GoTopButton = ({ color }: Props) => {
         fontSize: '1.5rem',
         letterSpacing: '1.3px',
         fontWeight: 700,
-        color: color ? theme.palette.secondary.contrastText : theme.palette.primary.contrastText,
-        background: `linear-gradient(90deg, ${color ? theme.palette.secondary.dark : theme.palette.primary.dark} 0%, ${color ? theme.palette.secondary.main : theme.palette.primary.main} 100%)`,
+        color: color ? secondary.contrastText : primary.contrastText,
+        background: `linear-gradient(90deg, ${color ? secondary.dark : primary.dark} 0%, ${color ? secondary.main : primary.main} 100%)`,
         border: 'none',
         borderRadius: '1000px',
-        boxShadow: `0px 0px 24px ${color ? theme.palette.secondary.dark : theme.palette.primary.dark}`,
+        boxShadow: `0px 0px 24px ${color ? secondary.dark : primary.dark}`,
         transition: 'all 0.3s ease-in-out 0s',
         cursor: 'pointer',
         outline: 'none',
         position: 'relative',
         padding: '10px',
-        '&:hover, &:focus': {
-            color: color ? theme.palette.secondary.contrastText : theme.palette.primary.contrastText,
+        '&:hover': {
+            color: color ? secondary.contrastText : primary.contrastText,
             transform: 'translateY(-6px)',
         },
         '&::before': {
             content: '""',
-            color: color ? theme.palette.secondary.contrastText : theme.palette.primary.contrastText,
+            color: color ? secondary.contrastText : primary.contrastText,
             borderRadius: '1000px',
             width: '4rem',
             height: '4rem',
-            border: `6px solid ${color ? theme.palette.secondary.main : theme.palette.primary.main}`,
-            boxShadow: `0 0 0px ${color ? theme.palette.secondary.dark : theme.palette.primary.dark}`,
+            border: `6px solid ${color ? secondary.main : primary.main}`,
+            boxShadow: `0 0 0px ${color ? secondary.dark : primary.dark}`,
             position: 'absolute',
             top: '50%',
             left: '50%',
@@ -61,11 +67,11 @@ const GoTopButton = ({ color }: Props) => {
         },
         '&::after': {
             content: '""',
-            color: color ? theme.palette.secondary.contrastText : theme.palette.primary.contrastText,
+            color: color ? secondary.contrastText : primary.contrastText,
             width: '2rem',
             height: '2rem',
             borderRadius: '100%',
-            border: `6px solid ${color ? theme.palette.secondary.main : theme.palette.primary.main}`,
+            border: `6px solid ${color ? secondary.main : primary.main}`,
             position: 'absolute',
             zIndex: -1,
             top: '50%',
@@ -73,11 +79,11 @@ const GoTopButton = ({ color }: Props) => {
             transform: 'translate(-50%, -50%)',
             animation: `${ring} 1.5s infinite`,
         },
-        '&:hover::after, &:focus::after': {
+        '&:hover::after': {
             animation: 'none',
             display: 'none',
         },
-        '&:hover::before, &:focus::before': {
+        '&:hover::before': {
             opacity: 1,
         },
     }));

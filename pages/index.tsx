@@ -1,4 +1,5 @@
 //import About from './about';
+import ContactMe from './contactMe';
 import Home from './home';
 import Projects from './projects';
 import Skills from './skills';
@@ -10,6 +11,7 @@ const Index = () => {
       <Skills />
       <Projects />
       {/* <About /> */}
+      <ContactMe />
     </>
   );
 }

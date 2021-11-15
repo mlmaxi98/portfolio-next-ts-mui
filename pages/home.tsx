@@ -10,13 +10,9 @@ const Home = () => {
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'center',
-                }}
-            >
-                <Grid >
+                }}>
+                <Grid>
                     <Title size={1.5} title="Soy Joaquín Maximiliano Cardozo y soy un Full Stack Web Developer" />
-                    {/* <Typography>
-                        Soy Joaquín Maximiliano Cardozo y soy un Full Stack Web Developer
-                    </Typography> */}
                 </Grid>
             </Container>
         </Box>

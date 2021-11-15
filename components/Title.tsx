@@ -20,12 +20,10 @@ const Title = ({ title, size }: Props) => {
         textAlign: 'center',
         margin: '2rem 0',
         fontSize: `${size}rem`,
-        //fontWeight: 700
     }));
+
     return (
-        <CustomTitle >
-            {title}
-        </CustomTitle>
+        <CustomTitle> {title} </CustomTitle>
     );
 }
 

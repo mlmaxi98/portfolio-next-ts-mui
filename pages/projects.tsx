@@ -1,11 +1,9 @@
 import { Container, Grid, Box } from '@mui/material'
 import Project from '../components/project'
-import { myProjects } from '../components/Consts'
-//import { useTheme } from '@mui/system'
 import Title from '../components/Title'
+import { myProjects } from '../components/Consts'
 
 const Projects = () => {
-    //const theme = useTheme()
     return (
         <Box
             component="section"
@@ -22,17 +20,6 @@ const Projects = () => {
                     justifyContent: 'center',
                 }}>
                 <Title title="Proyectos" size={2.5} />
-                {/* <Typography
-                    variant="h4"
-                    color={theme.palette.mode === 'dark' ?
-                        'primary' : 'secondary'}
-                    sx={{
-                        my: 5,
-                        textAlign: 'center'
-                    }}
-                >
-                    Proyectos
-                </Typography> */}
                 <Grid
                     container
                     spacing={8}>

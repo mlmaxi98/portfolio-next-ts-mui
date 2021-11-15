@@ -70,13 +70,11 @@ const Project = ({
                 <Grid container spacing={1} >
                     {
                         languages.map((lang) =>
-                            <Grid item >
+                            <Grid item key={lang} >
                                 <Chip
-                                    key={lang}
                                     label={lang}
                                     color={theme.palette.mode === 'dark' ? "primary" : "secondary"}
                                     size="small"
-                                //variant='outlined'
                                 />
                             </Grid>
                         )
