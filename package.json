@@ -9,6 +9,7 @@
     "@emotion/styled": "latest",
     "@mui/icons-material": "^5.0.5",
     "@mui/material": "latest",
+    "@sendgrid/mail": "^7.6.0",
     "@types/react-typing-effect": "^2.0.2",
     "clsx": "latest",
     "formik": "^2.2.9",
