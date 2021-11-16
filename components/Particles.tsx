@@ -1,22 +1,20 @@
 import { useTheme } from "@mui/material";
 import Parts from "react-tsparticles";
 
-interface Props {
-    color: boolean;
-}
-const Particles = (props: Props) => {
-    const theme = useTheme()
-    const { color } = props;
+const Particles = () => {
+    const { palette } = useTheme()
+    const { primary, secondary } = palette
+    const color = palette.mode === 'dark'
     return (
         <Parts
             options={{
                 fpsLimit: 60,
                 particles: {
                     color: {
-                        value: color ? theme.palette.secondary.main : theme.palette.primary.main,
+                        value: color ? secondary.main : primary.main,
                     },
                     links: {
-                        color: color ? theme.palette.secondary.main : theme.palette.primary.main,
+                        color: color ? secondary.main : primary.main,
                         distance: 150,
                         enable: true,
                         opacity: 0.5,

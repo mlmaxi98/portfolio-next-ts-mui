@@ -4,15 +4,11 @@ import { Stack } from '@mui/material';
 import { keyframes } from '@mui/system'
 import { MdKeyboardArrowUp as Top } from "react-icons/md";
 
-interface Props {
-    color: boolean;
-}
-
-const GoTopButton = ({ color }: Props) => {
+const GoTopButton = () => {
     const goTop = () => window.scrollTo({ top: 0, behavior: 'smooth' })
-    const theme = useTheme()
-    const primary = theme.palette.primary
-    const secondary = theme.palette.secondary
+    const { palette } = useTheme()
+    const { primary, secondary } = palette
+    const color = palette.mode === 'dark'
 
     const ring = keyframes`
         0% {

@@ -22,6 +22,7 @@ import {
 interface Route {
     name: string;
     link: string;
+    icon: JSX.Element;
 }
 
 interface Props {
@@ -40,16 +41,14 @@ const NavigationDrawer = (props: Props) => {
             anchor="right"
             open={open}
             variant="temporary"
-            onClose={onClose}
-        >
+            onClose={onClose}>
             <Box
                 sx={{
                     display: 'flex',
                     justifyContent: 'space-between',
                     alignItems: 'center',
                     minHeight: { xs: 48, sm: 64 },
-                }}
-            >
+                }}>
                 <IconButton size="large" onClick={onClose}>
                     <Close color={mode ? "secondary" : "primary"} fontSize="large" />
                 </IconButton>
@@ -63,8 +62,7 @@ const NavigationDrawer = (props: Props) => {
                         ? <Sun sx={{ display: 'flex' }} />
                         : <Moon sx={{ display: 'flex' }} />}
                     labelPlacement="start"
-                    sx={{ paddingRight: 2, marginRight: 0 }}
-                />
+                    sx={{ paddingRight: 2, marginRight: 0 }} />
             </Box>
             <Divider />
             <List>
@@ -73,9 +71,10 @@ const NavigationDrawer = (props: Props) => {
                         key={route.name}
                         button
                         onClick={onClose}
-                        {...{ component: Link, href: route.link, noLinkStyle: true }}
-                    >
-                        <ListItemIcon><Inbox /></ListItemIcon>
+                        {...{ component: Link, href: route.link, noLinkStyle: true }}>
+                        <ListItemIcon>
+                            {route.icon}
+                        </ListItemIcon>
                         <ListItemText primary={route.name} />
                     </ListItem>
                 ))}

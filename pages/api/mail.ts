@@ -4,7 +4,6 @@ import sgMail from '@sendgrid/mail'
 export default async (req: NextApiRequest, res: NextApiResponse) => {
     if (req.method === "POST") {
         const { firstName, lastName, email, message } = req.body;
-        console.log(firstName, lastName, email, message)
         sgMail.setApiKey(process.env.SENDGRID_API_KEY)
         const newMessage = `
             Nombre y apellido: ${firstName} ${lastName} \r\n
@@ -27,4 +26,3 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         }
     }
 }
-

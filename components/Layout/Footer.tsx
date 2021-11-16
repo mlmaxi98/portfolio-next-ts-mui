@@ -1,31 +1,29 @@
 import GoTopButton from '../goTopButton';
 import { Box, Typography, Link } from '@mui/material/';
 import { useTheme } from "@mui/material";
-interface Props {
-    color: boolean;
-}
-const Footer = (props: Props) => {
-    const theme = useTheme()
-    const { color } = props;
+
+const Footer = () => {
+    const { palette } = useTheme()
+    const { primary, secondary } = palette
+    const color = palette.mode === 'dark'
 
     return (
         <>
-            <GoTopButton color={!color} />
+            <GoTopButton />
             <Box
                 component="footer"
                 sx={{
                     py: 5,
                     mt: 4,
-                    bgcolor: (color ? theme.palette.secondary.dark : theme.palette.primary.dark),
+                    bgcolor: (color ? secondary.dark : primary.dark),
                 }}
             >
                 <Typography
                     variant="body1"
                     align="center"
-                    color={
-                        theme.palette.mode === 'dark'
-                            ? 'info'
-                            : theme.palette.primary.contrastText}
+                    color={color
+                        ? 'info'
+                        : primary.contrastText}
                     sx={{ fontWeight: 700 }}
                 >
                     {'© '}

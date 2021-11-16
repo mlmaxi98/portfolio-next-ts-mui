@@ -16,7 +16,12 @@ import {
 import {
     Menu as MenuIcon,
     Brightness7 as Sun,
-    Brightness4 as Moon
+    Brightness4 as Moon,
+    Home,
+    Star,
+    Work,
+    Email,
+    AccountBox
 } from '@mui/icons-material';
 import { useTheme } from '@mui/material/styles';
 import Link from 'next/link';
@@ -41,21 +46,22 @@ const HideOnScroll = (props: Props) => {
     );
 }
 const Navbar = (props: NavProps) => {
-    const theme = useTheme();
     const { mode, toggleMode } = props;
-    const responsive = useMediaQuery(theme.breakpoints.down('md'));
+    const { palette, breakpoints } = useTheme();
     const [mobileOpen, setMobileOpen] = useState(false);
+    const responsive = useMediaQuery(breakpoints.down('md'));
+    const { primary, secondary } = palette
 
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
     };
 
     const Routes = [
-        { name: 'INICIO', link: '/#' },
-        { name: 'HABILIDADES', link: '/#skills' },
-        { name: 'PROYECTOS', link: '/#projects' },
-        { name: 'ACERCA DE MI', link: '/#about' },
-        { name: 'CONTACTAME', link: '/#contactme' },
+        { name: 'INICIO', link: '/#', icon: <Home /> },
+        { name: 'ACERCA DE MI', link: '/#about', icon: <AccountBox /> },
+        /* { name: 'HABILIDADES', link: '/#skills', icon: <Star /> }, */
+        { name: 'PORTAFOLIO', link: '/#portfolio', icon: <Work /> },
+        { name: 'CONTACTAME', link: '/#contactme', icon: <Email /> },
     ]
 
     return (
@@ -83,35 +89,41 @@ const Navbar = (props: NavProps) => {
                                 {
                                     responsive
                                         ? <IconButton
-                                            aria-label="Open Navigation"
                                             size="large"
                                             sx={{ marginLeft: 'auto' }}
-                                            onClick={handleDrawerToggle}
-                                        >
+                                            onClick={handleDrawerToggle}>
                                             <MenuIcon
                                                 fontSize="large"
-                                                sx={{ color: mode ? theme.palette.secondary.main : theme.palette.primary.contrastText }}
-                                            />
+                                                sx={{
+                                                    color: mode
+                                                        ? secondary.main
+                                                        : primary.contrastText
+                                                }} />
                                         </IconButton>
                                         : <>
-                                            {Routes.map(route =>
-                                                <Link
-                                                    href={route.link}
-                                                    key={route.name}
-                                                >
-                                                    <Button
-                                                        variant='text'
-                                                        color={mode ? 'secondary' : 'inherit'}
-                                                    >
-                                                        {route.name}
-                                                    </Button>
-                                                </Link>)}
+                                            {
+                                                Routes.map(route =>
+                                                    <Link
+                                                        href={route.link}
+                                                        key={route.name}>
+                                                        <Button
+                                                            variant='text'
+                                                            color={mode
+                                                                ? 'secondary'
+                                                                : 'inherit'}>
+                                                            {route.name}
+                                                        </Button>
+                                                    </Link>)
+                                            }
                                             <FormControlLabel
                                                 control={
-                                                    <Switch checked={mode} onChange={toggleMode} color='secondary' />}
-                                                label={mode ? <Sun sx={{ display: 'flex' }} /> : <Moon sx={{ display: 'flex' }} />}
-                                                labelPlacement="start"
-                                            />
+                                                    <Switch
+                                                        checked={mode}
+                                                        onChange={toggleMode} color='secondary' />}
+                                                label={mode
+                                                    ? <Sun sx={{ display: 'flex' }} />
+                                                    : <Moon sx={{ display: 'flex' }} />}
+                                                labelPlacement="start" />
                                         </>
                                 }
                             </Box>
@@ -129,7 +141,7 @@ const Navbar = (props: NavProps) => {
                     toggleMode={toggleMode}
                 />
             }
-        </Box >
+        </Box>
     );
 }
 

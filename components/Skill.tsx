@@ -7,10 +7,9 @@ interface Props {
 }
 
 const Skill = ({ icon, name }: Props) => {
-    const theme = useTheme()
-    const mode = theme.palette.mode === 'dark'
-    const primary = theme.palette.primary
-    const secondary = theme.palette.secondary
+    const { palette } = useTheme()
+    const { primary, secondary } = palette
+    const mode = palette.mode === 'dark'
 
     const CustomIcon = styled(Icon)<IconProps>(() => ({
         minWidth: '5rem',
@@ -18,7 +17,7 @@ const Skill = ({ icon, name }: Props) => {
         fontSize: '3rem',
         position: 'relative',
         color: mode ? secondary.contrastText : primary.contrastText,
-        background: `linear-gradient(90deg, ${mode ? theme.palette.secondary.dark : theme.palette.primary.dark} 0%, ${mode ? secondary.main : primary.main} 100%)`,
+        background: `linear-gradient(90deg, ${mode ? secondary.dark : primary.dark} 0%, ${mode ? secondary.main : primary.main} 100%)`,
         border: 'none',
         borderRadius: '1000px',
         boxShadow: `0px 0px 24px ${mode ? secondary.dark : primary.dark}`,
@@ -29,7 +28,7 @@ const Skill = ({ icon, name }: Props) => {
         '&:hover': {
             color: !mode ? secondary.contrastText : primary.contrastText,
             transform: 'translateY(-6px)',
-            background: `linear-gradient(90deg, ${!mode ? theme.palette.secondary.dark : theme.palette.primary.dark} 0%, ${!mode ? secondary.main : primary.main} 100%)`,
+            background: `linear-gradient(90deg, ${!mode ? secondary.dark : primary.dark} 0%, ${!mode ? secondary.main : primary.main} 100%)`,
             boxShadow: `0px 0px 24px ${!mode ? secondary.dark : primary.dark}`,
             'p': {
                 color: 'red'

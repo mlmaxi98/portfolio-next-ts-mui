@@ -9,7 +9,6 @@ import {
     SiMaterialui,
     SiNextdotjs,
     SiPostgresql,
-    SiFirebase,
     SiTypescript,
     SiSass,
     SiStyledcomponents,
@@ -41,7 +40,6 @@ export const techs = [
     { name: 'PostgreSQL', icon: <SiPostgresql />, url: 'https://www.postgresql.org/' },
     { name: 'Sequelize', icon: <SiSequelize />, url: 'https://sequelize.org/' },
     { name: 'Git', icon: <SiGit />, url: 'https://git-scm.com/' },
-    { name: 'Firebase', icon: <SiFirebase />, url: 'https://firebase.google.com/' },
 ]
 export const myProjects = [
     {

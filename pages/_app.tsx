@@ -33,10 +33,10 @@ const App = (props: MyAppProps) => {
       </Head>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <Particles color={mode} />
+        <Particles />
         <Navbar toggleMode={toggleMode} mode={mode} />
         <Component {...pageProps} />
-        <Footer color={mode} />
+        <Footer />
       </ThemeProvider>
     </CacheProvider>
   );

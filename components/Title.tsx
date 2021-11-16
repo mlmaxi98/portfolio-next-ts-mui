@@ -7,10 +7,9 @@ interface Props {
 }
 
 const Title = ({ title, size }: Props) => {
-    const theme = useTheme()
-    const mode = theme.palette.mode === 'dark'
-    const primary = theme.palette.primary
-    const secondary = theme.palette.secondary
+    const { palette } = useTheme()
+    const { primary, secondary } = palette
+    const mode = palette.mode === 'dark'
 
     const CustomTitle = styled(Typography)<TypographyProps>(() => ({
         color: mode ? secondary.main : primary.main,
