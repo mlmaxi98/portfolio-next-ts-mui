@@ -13,7 +13,6 @@ import {
 } from '@mui/material';
 import {
     Close,
-    Inbox,
     Brightness4 as Moon,
     Brightness7 as Sun,
 } from '@mui/icons-material';
