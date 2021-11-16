@@ -17,6 +17,7 @@ import {
     SiExpress,
     SiSequelize,
     SiQuasar,
+    SiGraphql
 } from 'react-icons/si';
 
 
@@ -36,6 +37,7 @@ export const techs = [
     { name: 'Quasar', icon: <SiQuasar />, url: 'https://quasar.dev/' },
     { name: 'Node js', icon: <SiNodedotjs />, url: 'https://nodejs.org/' },
     { name: 'Express js', icon: <SiExpress />, url: 'https://expressjs.com/' },
+    { name: 'GraphQL', icon: <SiGraphql />, url: 'https://graphql.org/' },
     { name: 'PostgreSQL', icon: <SiPostgresql />, url: 'https://www.postgresql.org/' },
     { name: 'Sequelize', icon: <SiSequelize />, url: 'https://sequelize.org/' },
     { name: 'Git', icon: <SiGit />, url: 'https://git-scm.com/' },
