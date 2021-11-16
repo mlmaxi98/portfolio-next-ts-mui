@@ -19,11 +19,17 @@ const ContactMe = () => {
     const onSubmit = async (
         values: ContactFields, onSubmitProps: FormikHelpers<ContactFields>
     ) => {
-        await fetch('/api/mail', {
-            method: 'post',
-            body: JSON.stringify(values)
-        })
-        onSubmitProps.resetForm()
+        try {
+
+            const res = await fetch('/api/mail', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(values),
+            })
+            if (res.ok) onSubmitProps.resetForm()
+        } catch (error) {
+            console.log(error)
+        }
     }
     const validateSchema = Yup.object().shape({
         firstName: Yup.string().required("Este campo es requerido"),
