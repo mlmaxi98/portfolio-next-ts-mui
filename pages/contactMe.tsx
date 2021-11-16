@@ -8,6 +8,7 @@ interface ContactFields {
     email: string;
     message: string;
 }
+
 const ContactMe = () => {
     const initValues: ContactFields = {
         firstName: '',

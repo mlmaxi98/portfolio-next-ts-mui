@@ -31,5 +31,9 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "next.config.js"  ]
+  ],
+  "typeRoots": [
+    "./global.d.ts",
+    "./node_modules/@types"
+  ]
 }
