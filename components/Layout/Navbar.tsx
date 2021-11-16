@@ -18,7 +18,6 @@ import {
     Brightness7 as Sun,
     Brightness4 as Moon,
     Home,
-    Star,
     Work,
     Email,
     AccountBox
