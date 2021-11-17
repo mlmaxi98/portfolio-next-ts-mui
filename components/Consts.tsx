@@ -13,11 +13,21 @@ interface Project {
     github: string;
 }
 
+interface Network {
+    icon: JSX.Element;
+    name: string;
+    url: string;
+}
+
 import {
     SiHtml5,
     SiCss3,
     SiJavascript,
     SiGit,
+    SiGithub,
+    SiWhatsapp,
+    SiInstagram,
+    SiLinkedin,
     SiNodedotjs,
     SiReact,
     SiRedux,
@@ -33,6 +43,13 @@ import {
     SiQuasar,
     SiGraphql
 } from 'react-icons/si';
+
+export const aboutMe: string[] = [
+    'Desarrollador Full Stack residente de Jujuy - Argentina',
+    'Amante de la programación, disfruto mucho trabajar en equipo',
+    'Puedo aportar soluciones óptimas en poco tiempo',
+    'Estoy abierto a la relocalización'
+]
 
 
 export const techs: Tech[] = [
@@ -118,4 +135,11 @@ export const myProjects: Project[] = [
         demo: 'https://weather-app-914dd.web.app/',
         github: 'https://github.com/mlmaxi98/Weather-App',
     },
+]
+
+export const networks: Network[] = [
+    { name: 'Github', icon: <SiGithub />, url: 'https://github.com/mlmaxi98' },
+    { name: 'Linked In', icon: <SiLinkedin />, url: 'https://www.linkedin.com/in/joaquin-cardozo/' },
+    { name: 'Whatsapp', icon: <SiWhatsapp />, url: 'http://wa.me/5493884641203' },
+    { name: 'Instagram', icon: <SiInstagram />, url: 'https://www.instagram.com/mlmaxi98/' },
 ]

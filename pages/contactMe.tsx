@@ -1,8 +1,11 @@
 import { useState } from 'react';
 import * as Yup from 'yup'
 import { Formik, Form, ErrorMessage, FormikHelpers } from 'formik';
-import { Box, Container, Button, Grid, Card, CardContent, TextField, useTheme } from '@mui/material/';
+import { Avatar, Box, Container, Button, Grid, Card, CardContent, CardActions, TextField, useTheme, Typography, IconButton, Link } from '@mui/material/';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 import Title from '../components/Title';
+import { networks } from '../components/Consts'
+
 interface ContactFields {
     firstName: string;
     lastName: string;
@@ -148,12 +151,55 @@ const ContactMe = () => {
                             </CardContent>
                         </Card>
                     </Grid>
+                    <Grid item>
+                        <Card >
+                            <CardContent>
+                                <Typography textAlign='center'>
+                                    Puedes encontrarme en mis otras redes:
+                                </Typography>
+                            </CardContent>
+                            <CardActions sx={{
+                                justifyContent: 'center',
+                            }}>
+                                {
+                                    networks.map(network => {
+                                        return (
+                                            <Link
+                                                key={network.name}
+                                                href={network.url}
+                                                target="_blank"
+                                                title={network.name}
+                                            >
+                                                <IconButton
+                                                    size='large'
+                                                    color={mode ? 'secondary' : 'primary'}
+                                                >
+                                                    {network.icon}
+                                                </IconButton>
+                                            </Link>
+                                        )
+                                    })
+                                }
+                            </CardActions>
+                            <CardContent sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                                <Avatar
+                                    sx={{ objectFit: 'fill', margin: '0 1rem' }}
+                                    src={'http://purecatamphetamine.github.io/country-flag-icons/3x2/AR.svg'} />
+                                <FavoriteIcon color={mode ? 'secondary' : 'primary'} />
+                                <Avatar
+                                    sx={{ objectFit: 'fill', margin: '0 1rem' }}
+                                    src={'http://purecatamphetamine.github.io/country-flag-icons/3x2/MX.svg'} />
+                            </CardContent>
+                        </Card>
+
+
+                    </Grid>
 
                 </Grid>
 
             </Container>
 
-        </Box>
+        </Box >
     );
 }
 export default ContactMe
