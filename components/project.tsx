@@ -1,9 +1,10 @@
-import { Button, Card, CardActions, CardContent, CardMedia, Chip, Grid, Typography, useTheme } from '@mui/material'
+import { Button, Card, CardContent, CardMedia, Chip, Grid, Typography, useTheme } from '@mui/material'
+import { SiGithub } from 'react-icons/si';
+import { Visibility } from '@mui/icons-material';
 interface Project {
     description: string;
     images: string;
     languages: string[];
-    subtitle: string;
     title: string;
     direction: boolean;
 }
@@ -13,9 +14,8 @@ const Project = ({
     images,
     languages,
     title,
-    //subtitle,
 }: Project) => {
-    const theme = useTheme()
+    const { palette } = useTheme()
     const cardDirection = direction ? 'row' : 'row-reverse'
     return (
         <Card
@@ -57,33 +57,59 @@ const Project = ({
                     flexDirection: 'column',
                     justifyContent: 'space-between',
                     zIndex: 2,
-                }} >
-                <Typography variant="h5" gutterBottom color={theme.palette.mode !== 'dark' ? "primary" : "secondary"}>
+                }}>
+                <Typography
+                    variant="h5"
+                    gutterBottom
+                    color={palette.mode !== 'dark'
+                        ? "primary" : "secondary"}>
                     {title}
                 </Typography>
-                {/*   <Typography variant="h6" gutterBottom>
-                    {subtitle}
-                </Typography> */}
                 <Typography variant="subtitle1" gutterBottom>
                     {description}
                 </Typography>
-                <Grid container spacing={1} >
-                    {
-                        languages.map((lang) =>
-                            <Grid item key={lang} >
-                                <Chip
-                                    label={lang}
-                                    color={theme.palette.mode === 'dark' ? "primary" : "secondary"}
-                                    size="small"
-                                />
-                            </Grid>
-                        )
-                    }
+                <Grid container>
+                    <Grid container xs={8} sm={9} spacing={1} >
+                        {
+                            languages.map((lang) =>
+                                <Grid item key={lang}>
+                                    <Chip
+                                        label={lang}
+                                        color={palette.mode === 'dark' ? "primary" : "secondary"}
+                                        size="small"
+                                    //variant="outlined"
+                                    />
+                                </Grid>
+                            )
+                        }
+                    </Grid>
+                    <Grid
+                        container xs={4}
+                        sm={3}
+                        direction="column"
+                        spacing={2}>
+                        <Grid item>
+                            <Button
+                                fullWidth
+                                color={palette.mode !== 'dark'
+                                    ? "primary" : "secondary"}
+                                variant="contained"
+                                startIcon={<SiGithub />}>
+                                Repo
+                            </Button>
+                        </Grid>
+                        <Grid item>
+                            <Button
+                                fullWidth
+                                color={palette.mode !== 'dark'
+                                    ? "primary" : "secondary"}
+                                variant="outlined"
+                                startIcon={<Visibility />}>
+                                Demo
+                            </Button>
+                        </Grid>
+                    </Grid>
                 </Grid>
-                <CardActions>
-                    <Button size="small">GitHub</Button>
-                    <Button size="small">Demo</Button>
-                </CardActions>
             </CardContent>
         </Card>
     )

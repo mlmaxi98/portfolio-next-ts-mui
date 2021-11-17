@@ -14,7 +14,6 @@ const About = () => {
         </Box>
       </Container>
       <Skills />
-
     </Box>
   );
 }

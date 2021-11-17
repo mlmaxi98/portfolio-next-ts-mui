@@ -1,3 +1,18 @@
+interface Tech {
+    name: string;
+    icon: JSX.Element;
+    url: string;
+}
+
+interface Project {
+    title: string;
+    description: string;
+    images: string[];
+    languages: string[];
+    demo: string | undefined;
+    github: string | undefined;
+}
+
 import {
     SiHtml5,
     SiCss3,
@@ -20,7 +35,7 @@ import {
 } from 'react-icons/si';
 
 
-export const techs = [
+export const techs: Tech[] = [
     { name: 'HTML 5', icon: <SiHtml5 />, url: 'https://developer.mozilla.org/es/docs/Web/HTML' },
     { name: 'CSS 3', icon: <SiCss3 />, url: 'https://developer.mozilla.org/es/docs/Web/CSS' },
     { name: 'JavaScript', icon: <SiJavascript />, url: 'https://developer.mozilla.org/es/docs/Web/JavaScript' },
@@ -41,10 +56,9 @@ export const techs = [
     { name: 'Sequelize', icon: <SiSequelize />, url: 'https://sequelize.org/' },
     { name: 'Git', icon: <SiGit />, url: 'https://git-scm.com/' },
 ]
-export const myProjects = [
+export const myProjects: Project[] = [
     {
         title: 'Arcadepedia',
-        subtitle: 'Proyecto Personal',
         description: `Aplicación creada con React.js, Redux.js y SCSS en la cual puedes buscar juegos que estén disponibles
         en la API de RAWG.IO, ver sus detalles e ímagenes, filtrarlos por género y ordenarlos de distintas
         maneras.`,
@@ -53,51 +67,55 @@ export const myProjects = [
             'https://i.ibb.co/2M52hYV/ordenado.png',
             'https://i.ibb.co/4Vrp0RM/detalles.png'
         ],
-        languages: ['React.js', 'Redux.js', 'Node.js'],
+        languages: ['React.js', 'Redux.js', 'SCSS'],
+        demo: undefined,
+        github: undefined,
     },
     {
         title: 'Tech Store',
-        subtitle: 'E-Commerce',
         description: `Desarrollo de una Aplicación usando SCRUM y aplicando las tecnologías aprendidas durante el
         cursado del Bootcamp.`,
         images: [
+            'https://i.ibb.co/4Vrp0RM/detalles.png',
             'https://i.ibb.co/NrKRRht/Countries-APP-images.png',
             'https://i.ibb.co/2M52hYV/ordenado.png',
-            'https://i.ibb.co/4Vrp0RM/detalles.png'
         ],
-        languages: ['React.js', 'Redux.js', 'Node.js'],
+        languages: ['React.js', 'Redux.js', 'Node.js', 'SCSS', 'Supabase'],
+        demo: undefined,
+        github: undefined,
     },
     {
         title: 'More Trips!',
-        subtitle: 'Henry Labs',
         description: `Aplicación creada con React, Redux y Styled Components para el Frontend. Esta aplicación consume
         datos de una base de datos que fueron cargados desde una API a través de un Backend creado con
         Express.`,
         images: [
             'https://i.ibb.co/NrKRRht/Countries-APP-images.png',
             'https://i.ibb.co/2M52hYV/ordenado.png',
-            // 'https://i.ibb.co/4Vrp0RM/detalles.png'
         ],
         languages: [
             'React.js',
             'Redux.js',
+            'Styled - Components',
             'Node.js',
             'Sequelize',
             'PostgreSQL',
-            'Styled - Components'
         ],
+        demo: undefined,
+        github: undefined,
     },
     {
         title: 'Weather App',
-        subtitle: 'Henry Bootcamp',
         description: `Aplicación creada con React, Redux y Styled Components para el Frontend. Esta aplicación consume
         datos de una base de datos que fueron cargados desde una API a través de un Backend creado con
         Express.`,
         images: [
-            'https://i.ibb.co/NrKRRht/Countries-APP-images.png',
             'https://i.ibb.co/2M52hYV/ordenado.png',
+            'https://i.ibb.co/NrKRRht/Countries-APP-images.png',
             'https://i.ibb.co/4Vrp0RM/detalles.png'
         ],
-        languages: ['React.js', 'Redux.js', 'Node.js'],
+        languages: ['React.js', 'Redux.js', 'SCSS'],
+        demo: undefined,
+        github: undefined,
     },
 ]

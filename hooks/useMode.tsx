@@ -1,17 +1,17 @@
 import { useState } from "react";
 import { createTheme } from '@mui/material';
-import { cyan, purple, blueGrey } from '@mui/material/colors';
+import { cyan, blueGrey } from '@mui/material/colors';
 
 const useMode = () => {
     const [mode, setMode] = useState(true)
     const toggleMode = () => setMode(!mode)
-    const colorBar = mode ? cyan[500] : purple[500]
-    const colorInput = mode ? blueGrey[900] : purple[50]
-    const colorBarHover = mode ? cyan[700] : purple[700]
+    const colorBar = mode ? cyan[500] : blueGrey[500]
+    const colorInput = mode ? blueGrey[900] : blueGrey[50]
+    const colorBarHover = mode ? cyan[700] : blueGrey[700]
     const theme = createTheme({
         palette: {
             mode: mode ? 'dark' : 'light',
-            primary: purple,
+            primary: blueGrey,
             secondary: cyan,
             error: {
                 main: colorBar
