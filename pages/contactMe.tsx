@@ -57,96 +57,103 @@ const ContactMe = () => {
             component="section"
             id="contactme"
             sx={{
-                minHeight: '50vh',
+                py: 10,
                 px: 2,
-                py: 5,
             }}>
-            <Container
-                sx={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'center',
-                }}
-                maxWidth="sm"
-            >
-                <Title size={2.5} title="Contáctame" />
-                <Card>
-                    <CardContent>
-                        <Formik initialValues={initValues} onSubmit={onSubmit} validationSchema={validateSchema}>
-                            {
-                                ({ getFieldProps }) => (
-                                    <Form>
-                                        <Grid
-                                            container
-                                            spacing={2}
-                                        >
-                                            <Grid item xs={12} sm={6}>
-                                                <TextField
-                                                    color={mode ? 'secondary' : 'primary'}
-                                                    fullWidth
-                                                    variant='outlined'
-                                                    {...getFieldProps('firstName')}
-                                                    label="Nombre"
-                                                    placeholder="Ingrese su nombre *"
-                                                    helperText={<ErrorMessage name='firstName' />}
-                                                />
-                                            </Grid>
-                                            <Grid item xs={12} sm={6}>
-                                                <TextField
-                                                    color={mode ? 'secondary' : 'primary'}
-                                                    fullWidth
-                                                    variant='outlined'
-                                                    {...getFieldProps('lastName')}
-                                                    placeholder="Ingrese su apellido *"
-                                                    label="Apellido"
-                                                    helperText={<ErrorMessage name='lastName' />}
-                                                />
-                                            </Grid>
-                                            <Grid item xs={12}>
-                                                <TextField
-                                                    color={mode ? 'secondary' : 'primary'}
-                                                    fullWidth
-                                                    variant='outlined'
-                                                    label="Email"
-                                                    {...getFieldProps('email')}
-                                                    placeholder="Ingrese su email *"
-                                                    type="Email"
-                                                    helperText={<ErrorMessage name='email' />}
-                                                />
-                                            </Grid>
-                                            <Grid item xs={12}>
-                                                <TextField
-                                                    color={mode ? 'secondary' : 'primary'}
-                                                    fullWidth
-                                                    multiline
-                                                    rows={4}
-                                                    variant='outlined'
-                                                    {...getFieldProps('message')}
-                                                    label="Mensaje"
-                                                    placeholder="Ingrese su mensaje *"
-                                                    helperText={<ErrorMessage name='message' />}
-                                                />
-                                            </Grid>
-                                            <Grid item xs={12}>
-                                                <Button
-                                                    color={!mode ? 'secondary' : 'primary'}
-                                                    fullWidth
-                                                    type="submit"
-                                                    variant="contained"
-                                                    disabled={loading}
+            <Container maxWidth="sm">
+
+                <Grid
+                    container
+                    direction='column'
+                    spacing={5}>
+
+                    <Grid item>
+                        <Title size={2.5} title="Contáctame" />
+                    </Grid>
+
+                    <Grid item>
+                        <Card>
+                            <CardContent>
+                                <Formik initialValues={initValues} onSubmit={onSubmit} validationSchema={validateSchema}>
+                                    {
+                                        ({ getFieldProps }) => (
+                                            <Form>
+                                                <Grid
+                                                    container
+                                                    spacing={2}
                                                 >
-                                                    {loading ? 'Enviando' : 'Enviar'}
-                                                </Button>
-                                            </Grid>
-                                        </Grid>
-                                    </Form>
-                                )
-                            }
-                        </Formik>
-                    </CardContent>
-                </Card>
+                                                    <Grid item xs={12} md={6}>
+                                                        <TextField
+                                                            color={mode ? 'secondary' : 'primary'}
+                                                            fullWidth
+                                                            variant='outlined'
+                                                            {...getFieldProps('firstName')}
+                                                            label="Nombre"
+                                                            placeholder="Ingrese su nombre *"
+                                                            helperText={<ErrorMessage name='firstName' />}
+                                                        />
+                                                    </Grid>
+                                                    <Grid item xs={12} md={6}>
+                                                        <TextField
+                                                            color={mode ? 'secondary' : 'primary'}
+                                                            fullWidth
+                                                            variant='outlined'
+                                                            {...getFieldProps('lastName')}
+                                                            placeholder="Ingrese su apellido *"
+                                                            label="Apellido"
+                                                            helperText={<ErrorMessage name='lastName' />}
+                                                        />
+                                                    </Grid>
+                                                    <Grid item xs={12}>
+                                                        <TextField
+                                                            color={mode ? 'secondary' : 'primary'}
+                                                            fullWidth
+                                                            variant='outlined'
+                                                            label="Email"
+                                                            {...getFieldProps('email')}
+                                                            placeholder="Ingrese su email *"
+                                                            type="Email"
+                                                            helperText={<ErrorMessage name='email' />}
+                                                        />
+                                                    </Grid>
+                                                    <Grid item xs={12}>
+                                                        <TextField
+                                                            color={mode ? 'secondary' : 'primary'}
+                                                            fullWidth
+                                                            multiline
+                                                            rows={4}
+                                                            variant='outlined'
+                                                            {...getFieldProps('message')}
+                                                            label="Mensaje"
+                                                            placeholder="Ingrese su mensaje *"
+                                                            helperText={<ErrorMessage name='message' />}
+                                                        />
+                                                    </Grid>
+                                                    <Grid item xs={12}>
+                                                        <Button
+                                                            color={!mode ? 'secondary' : 'primary'}
+                                                            fullWidth
+                                                            type="submit"
+                                                            variant="contained"
+                                                            disabled={loading}
+                                                        >
+                                                            {loading ? 'Enviando' : 'Enviar'}
+                                                        </Button>
+                                                    </Grid>
+                                                </Grid>
+                                            </Form>
+                                        )
+                                    }
+                                </Formik>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+
+                </Grid>
+
             </Container>
-        </Box >
+
+        </Box>
     );
 }
 export default ContactMe

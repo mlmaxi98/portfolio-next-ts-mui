@@ -10,39 +10,43 @@ const Portfolio = () => {
             id="portfolio"
             sx={{
                 minHeight: '100vh',
-                py: 5,
+                py: 10,
                 px: 2,
             }}>
-            <Container
-                sx={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'center',
-                }}>
-                <Title title="Portafolio" size={2.5} />
+            <Container>
                 <Grid
                     container
-                    spacing={8}>
-                    {
-                        myProjects.map((project, i) => (
-                            <Grid
-                                key={project.title}
-                                item
-                                xs={12}
-                                md={6}
-                            >
-                                <Project
-                                    description={project.description}
-                                    images={project.images[0]}
-                                    languages={project.languages}
-                                    title={project.title}
-                                    direction={i % 2 === 1 ? false : true}
-                                    demo={project.demo}
-                                    github={project.github}
-                                />
-                            </Grid>
-                        ))
-                    }
+                    direction='column'
+                    spacing={5}>
+                    <Grid item xs={12}>
+                        <Title title="Portafolio" size={2.5} />
+                    </Grid>
+                    <Grid
+                        container
+                        item
+                        xs={12}
+                        spacing={8}>
+                        {
+                            myProjects.map((project, i) => (
+                                <Grid
+                                    key={project.title}
+                                    item
+                                    xs={12}
+                                    md={6}
+                                >
+                                    <Project
+                                        description={project.description}
+                                        images={project.images[0]}
+                                        languages={project.languages}
+                                        title={project.title}
+                                        direction={i % 2 === 1 ? false : true}
+                                        demo={project.demo}
+                                        github={project.github}
+                                    />
+                                </Grid>
+                            ))
+                        }
+                    </Grid>
                 </Grid>
             </Container >
         </Box>

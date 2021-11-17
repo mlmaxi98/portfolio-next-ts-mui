@@ -2,7 +2,6 @@ import About from './aboutMe';
 import ContactMe from './contactMe';
 import Home from './home';
 import Portfolio from './portfolio';
-//import Skills from './skills';
 const Index = () => {
 
   return (

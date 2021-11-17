@@ -18,26 +18,27 @@ const AboutMe = () => {
   const mode = palette.mode === 'dark'
   return (
     <Box component="section" id="about" sx={{
-      minHeight: '100vh',
-      py: 5,
+      py: 10,
       px: 2,
     }}>
-      <Container sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-      }}>
-        <Grid container spacing={10}>
+      <Container>
 
-          <Grid item container spacing={4}>
+        <Grid
+          container
+          direction='column'
+          justifyContent="space-between"
+          spacing={12}
+        >
+
+          <Grid container item spacing={4}>
             <Grid
               item
               xs={12}
-              sm={4}
+              md={3}
               alignItems='center'>
               <Title title="Acerca de mi" size={2.5} />
             </Grid>
-            <Grid item container xs={12} sm={8} justifyContent='center' spacing={2}>
+            <Grid container item xs={12} md={9} spacing={2}>
               <Grid item xs={12}>
                 <Typography variant='body1'>
                   Desarrollador Full Stack residente de Jujuy - Argentina
@@ -56,15 +57,15 @@ const AboutMe = () => {
             </Grid>
           </Grid>
 
-          <Grid item container spacing={4}>
+          <Grid container item spacing={4}>
             <Grid
               item
               xs={12}
-              sm={4}
+              md={3}
               alignItems='center'>
               <Title title="Habilidades" size={2.5} />
             </Grid>
-            <Grid item container xs={12} sm={8} spacing={3} justifyContent='center'>
+            <Grid container item xs={12} md={9} spacing={3} justifyContent='center'>
               {
                 techs.map((tech) => (
                   <Grid key={tech.name} item>
@@ -81,21 +82,31 @@ const AboutMe = () => {
             </Grid>
           </Grid>
 
-          <Grid item container spacing={4}>
+          <Grid container item spacing={4}>
+
             <Grid
               item
               xs={12}
-              sm={4}
+              md={3}
               alignItems='center'>
               <Title title="Curriculum" size={2.5} />
             </Grid>
-            <Grid item container xs={12} sm={8} alignItems='center' spacing={4}>
-              <Grid item xs={12}>
+
+            <Grid
+              container
+              item
+              xs={12}
+              md={9}
+              alignItems='center'
+              spacing={4}>
+
+              <Grid item xs={12} md={8}>
                 <Typography variant='body1'>
                   Puedes descargar mi Curriculum haciendo click en el siguiente botón
                 </Typography>
               </Grid>
-              <Grid item xs={12}>
+
+              <Grid item xs={12} md={4}>
                 <Button
                   fullWidth
                   href='/cv.pdf'
@@ -108,11 +119,15 @@ const AboutMe = () => {
                   Descargar CV
                 </Button>
               </Grid>
+
             </Grid>
+
           </Grid>
 
         </Grid>
+
       </Container>
+
     </Box>
   );
 }

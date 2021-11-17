@@ -74,7 +74,7 @@ const Project = ({
                     {description}
                 </Typography>
                 <Grid container>
-                    <Grid container xs={8} sm={9} spacing={1} >
+                    <Grid container xs={8} md={9} spacing={1} >
                         {
                             languages.map((lang) =>
                                 <Grid item key={lang}>
@@ -89,7 +89,7 @@ const Project = ({
                     </Grid>
                     <Grid
                         container xs={4}
-                        sm={3}
+                        md={3}
                         direction="column"
                         spacing={2}>
                         <Grid item>
