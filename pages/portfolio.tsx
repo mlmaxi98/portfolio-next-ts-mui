@@ -10,7 +10,7 @@ const Portfolio = () => {
             id="portfolio"
             sx={{
                 minHeight: '100vh',
-                my: 5,
+                py: 5,
                 px: 2,
             }}>
             <Container

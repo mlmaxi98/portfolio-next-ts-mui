@@ -1,4 +1,4 @@
-import About from './about';
+import About from './aboutMe';
 import ContactMe from './contactMe';
 import Home from './home';
 import Portfolio from './portfolio';

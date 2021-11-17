@@ -58,9 +58,8 @@ const Navbar = (props: NavProps) => {
     const Routes = [
         { name: 'INICIO', link: '/#', icon: <Home /> },
         { name: 'ACERCA DE MI', link: '/#about', icon: <AccountBox /> },
-        /* { name: 'HABILIDADES', link: '/#skills', icon: <Star /> }, */
         { name: 'PORTAFOLIO', link: '/#portfolio', icon: <Work /> },
-        { name: 'CONTACTAME', link: '/#contactme', icon: <Email /> },
+        { name: 'CONTACTO', link: '/#contactme', icon: <Email /> },
     ]
 
     return (
