@@ -7,6 +7,8 @@ interface Project {
     languages: string[];
     title: string;
     direction: boolean;
+    demo: string;
+    github: string;
 }
 const Project = ({
     description,
@@ -14,6 +16,9 @@ const Project = ({
     images,
     languages,
     title,
+    demo,
+    github,
+
 }: Project) => {
     const { palette } = useTheme()
     const cardDirection = direction ? 'row' : 'row-reverse'
@@ -77,7 +82,6 @@ const Project = ({
                                         label={lang}
                                         color={palette.mode === 'dark' ? "primary" : "secondary"}
                                         size="small"
-                                    //variant="outlined"
                                     />
                                 </Grid>
                             )
@@ -90,6 +94,9 @@ const Project = ({
                         spacing={2}>
                         <Grid item>
                             <Button
+                                disabled={!Boolean(github)}
+                                href={github}
+                                target="_blank"
                                 fullWidth
                                 color={palette.mode !== 'dark'
                                     ? "primary" : "secondary"}
@@ -100,6 +107,9 @@ const Project = ({
                         </Grid>
                         <Grid item>
                             <Button
+                                disabled={!Boolean(demo)}
+                                href={demo}
+                                target="_blank"
                                 fullWidth
                                 color={palette.mode !== 'dark'
                                     ? "primary" : "secondary"}

@@ -9,8 +9,8 @@ interface Project {
     description: string;
     images: string[];
     languages: string[];
-    demo: string | undefined;
-    github: string | undefined;
+    demo: string;
+    github: string;
 }
 
 import {
@@ -68,8 +68,8 @@ export const myProjects: Project[] = [
             'https://i.ibb.co/4Vrp0RM/detalles.png'
         ],
         languages: ['React.js', 'Redux.js', 'SCSS'],
-        demo: undefined,
-        github: undefined,
+        demo: 'https://arcadepedia-maxi.web.app/',
+        github: 'https://github.com/mlmaxi98/Arcadepedia',
     },
     {
         title: 'Tech Store',
@@ -81,8 +81,8 @@ export const myProjects: Project[] = [
             'https://i.ibb.co/2M52hYV/ordenado.png',
         ],
         languages: ['React.js', 'Redux.js', 'Node.js', 'SCSS', 'Supabase'],
-        demo: undefined,
-        github: undefined,
+        demo: 'https://henrystechstore.web.app/',
+        github: '',
     },
     {
         title: 'More Trips!',
@@ -101,8 +101,8 @@ export const myProjects: Project[] = [
             'Sequelize',
             'PostgreSQL',
         ],
-        demo: undefined,
-        github: undefined,
+        demo: 'https://maxi-countries.web.app/',
+        github: 'https://github.com/mlmaxi98/More-Trips',
     },
     {
         title: 'Weather App',
@@ -110,12 +110,12 @@ export const myProjects: Project[] = [
         datos de una base de datos que fueron cargados desde una API a través de un Backend creado con
         Express.`,
         images: [
-            'https://i.ibb.co/2M52hYV/ordenado.png',
+            'https://i.ibb.co/vHqx6Xz/clima2.png',
             'https://i.ibb.co/NrKRRht/Countries-APP-images.png',
             'https://i.ibb.co/4Vrp0RM/detalles.png'
         ],
         languages: ['React.js', 'Redux.js', 'SCSS'],
-        demo: undefined,
-        github: undefined,
+        demo: 'https://weather-app-914dd.web.app/',
+        github: 'https://github.com/mlmaxi98/Weather-App',
     },
 ]

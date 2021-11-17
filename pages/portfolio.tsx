@@ -37,6 +37,8 @@ const Portfolio = () => {
                                     languages={project.languages}
                                     title={project.title}
                                     direction={i % 2 === 1 ? false : true}
+                                    demo={project.demo}
+                                    github={project.github}
                                 />
                             </Grid>
                         ))
