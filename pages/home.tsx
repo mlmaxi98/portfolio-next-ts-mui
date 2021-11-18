@@ -38,7 +38,7 @@ const Home = () => {
                         md={3}
                         spacing={2}>
                         <Grid item xs={12}
-                            direction='row' sx={{ display: 'flex', alignItems: 'flex-end' }}>
+                            sx={{ display: 'flex', alignItems: 'flex-end' }}>
                             <Link href="#portfolio">
                                 <Button
                                     fullWidth

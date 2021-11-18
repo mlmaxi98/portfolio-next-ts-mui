@@ -24,7 +24,7 @@ const App = (props: MyAppProps) => {
         <title>Joaquín Maxi Cardozo | Full Stack Web Developer</title>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
         <meta name="theme-color" content={mode ? theme.palette.secondary.main : theme.palette.primary.main} />
-        <meta content="Un Full Stack Developer apasionado por la programación y enfrentar nuevos retos" name="description" />
+        <meta content="Un Full Stack Developer apasionado por la programación y en busca de nuevos retos" name="description" />
         <meta content="portfolio" name="keywords" />
         <meta content="English" name="language" />
         <meta content="Joaquín Cardozo" name="author" />

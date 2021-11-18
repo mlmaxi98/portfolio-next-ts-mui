@@ -46,7 +46,7 @@ import {
 } from 'react-icons/si';
 
 export const aboutMe: string[] = [
-    'Desarrollador Frontend / Full Stack residente en Jujuy - Argentina.',
+    'Desarrollador Full Stack residente en Jujuy - Argentina.',
     'Graduado del Bootcamp de Soy Henry.',
     'Amante de la programación, disfruto mucho trabajar en equipo.',
     'Puedo aportar soluciones óptimas en poco tiempo.',
@@ -110,7 +110,7 @@ export const myProjects: Project[] = [
         title: 'More Trips!',
         description: `Aplicación creada con React, Redux y Styled Components para el Frontend. Esta aplicación consume
         datos de una base de datos que fueron cargados desde una API a través de un Backend creado con
-        Express.`,
+        Express. (En reparación)`,
         image: '/moretrips.png',
         languages: [
             'React.js',
@@ -126,7 +126,7 @@ export const myProjects: Project[] = [
     },
     {
         title: 'Weather App',
-        description: `Aplicación sencilla creada con React y SCSS con la cual podrás consultar el estado clímatico de muchas ciudades`,
+        description: `Aplicación sencilla creada con React y SCSS con la cual podrás consultar el estado clímatico de muchas ciudades (En reparación)`,
         image: '/clima.png',
         languages: ['React.js', 'SCSS'],
         demo: 'https://weather-app-914dd.web.app/',
