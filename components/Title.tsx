@@ -33,7 +33,9 @@ const Title = ({ title, size, left }: Props) => {
                     title.map((str, i) => {
                         if (i % 2 !== 1) {
                             return (
-                                <Typography component="span"
+                                <Typography
+                                    key={str}
+                                    component="span"
                                     sx={{
                                         fontSize: `${size}rem`,
                                     }}>
@@ -43,7 +45,7 @@ const Title = ({ title, size, left }: Props) => {
                         }
                         else {
                             return (
-                                <CustomTitle> {str} </CustomTitle>
+                                <CustomTitle key={str}> {str} </CustomTitle>
                             )
                         }
                     })

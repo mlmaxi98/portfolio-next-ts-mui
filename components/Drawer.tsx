@@ -70,7 +70,7 @@ const NavigationDrawer = (props: Props) => {
                         key={route.name}
                         button
                         onClick={onClose}
-                        {...{ component: Link, href: route.link, noLinkStyle: true }}>
+                        {...{ component: Link, href: route.link }}>
                         <ListItemIcon>
                             {route.icon}
                         </ListItemIcon>

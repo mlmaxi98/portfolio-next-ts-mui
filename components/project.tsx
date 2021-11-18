@@ -77,7 +77,7 @@ const Project = ({
                     <Grid
                         container
                         item
-                        xs={8}
+                        xs={7}
                         md={9}
                         spacing={1}>
                         {
@@ -101,7 +101,7 @@ const Project = ({
                     <Grid
                         container
                         item
-                        xs={4}
+                        xs={5}
                         md={3}
                         direction="column"
                         spacing={2}>
