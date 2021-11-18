@@ -39,7 +39,7 @@ const Project = ({
             <CardMedia
                 image={image}
                 component="img"
-                alt="green iguana"
+                alt={title}
                 sx={{
                     width: {
                         xs: '100%',

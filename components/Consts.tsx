@@ -83,7 +83,7 @@ export const myProjects: Project[] = [
         image: '/portfolio.png',
         image2: '/portfolio2.png',
         languages: ['Next.js', 'TypeScript', 'Material UI'],
-        demo: 'https://arcadepedia-maxi.web.app/',
+        demo: '',
         github: 'https://github.com/mlmaxi98/Arcadepedia',
     },
     {
