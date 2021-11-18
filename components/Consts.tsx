@@ -79,12 +79,12 @@ export const techs: Tech[] = [
 export const myProjects: Project[] = [
     {
         title: 'Portafolio',
-        description: `Portafolio de proyectos personal en el cual podrás ver mis trabajos y proyectos en los cual he trabajado, fue desarrollado con tecnologías que fui aprendiendo a la par.`,
-        image: '/portfolio.png',
-        image2: '/portfolio2.png',
+        description: `Portafolio de proyectos personal en el cual puedes ver mis trabajos y proyectos en los cuales he trabajado, fue desarrollado con tecnologías que fui aprendiendo y reforzando a la par.`,
+        image: '/port.png',
+        image2: '/port2.png',
         languages: ['Next.js', 'TypeScript', 'Material UI'],
         demo: '',
-        github: 'https://github.com/mlmaxi98/Arcadepedia',
+        github: 'https://github.com/mlmaxi98/portfolio-next-ts-mui',
     },
     {
         title: 'Arcadepedia',
@@ -99,7 +99,7 @@ export const myProjects: Project[] = [
     {
         title: 'Tech Store',
         description: `Desarrollo de una Aplicación usando SCRUM y aplicando las tecnologías aprendidas durante el
-        cursado del Bootcamp.`,
+        cursado del Bootcamp. Desarrollé mis actividades como Frontend Developer, usando SCSS para la estilización de sus componentes.`,
         image: '/techstore2.png',
         image2: '/techstore.png',
         languages: ['React.js', 'Redux.js', 'SCSS', 'Supabase'],
@@ -126,11 +126,9 @@ export const myProjects: Project[] = [
     },
     {
         title: 'Weather App',
-        description: `Aplicación creada con React, Redux y Styled Components para el Frontend. Esta aplicación consume
-        datos de una base de datos que fueron cargados desde una API a través de un Backend creado con
-        Express.`,
+        description: `Aplicación sencilla creada con React y SCSS con la cual podrás consultar el estado clímatico de muchas ciudades`,
         image: '/clima.png',
-        languages: ['React.js', 'Redux.js', 'SCSS'],
+        languages: ['React.js', 'SCSS'],
         demo: 'https://weather-app-914dd.web.app/',
         github: 'https://github.com/mlmaxi98/Weather-App',
     },
