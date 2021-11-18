@@ -9,7 +9,8 @@ const Home = () => {
                 sx={{
                     minHeight: '100vh',
                     display: 'flex',
-                }}>
+                }}
+                maxWidth='md'>
                 <Grid container>
                     <Grid
                         item

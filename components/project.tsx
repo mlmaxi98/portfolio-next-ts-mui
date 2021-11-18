@@ -3,7 +3,7 @@ import { SiGithub } from 'react-icons/si';
 import { Visibility } from '@mui/icons-material';
 interface Project {
     description: string;
-    images: string;
+    image: string;
     languages: string[];
     title: string;
     direction: boolean;
@@ -13,7 +13,7 @@ interface Project {
 const Project = ({
     description,
     direction,
-    images,
+    image,
     languages,
     title,
     demo,
@@ -37,7 +37,7 @@ const Project = ({
             }}
         >
             <CardMedia
-                image={images}
+                image={image}
                 component="img"
                 alt="green iguana"
                 sx={{
@@ -73,11 +73,22 @@ const Project = ({
                 <Typography variant="subtitle1" gutterBottom>
                     {description}
                 </Typography>
-                <Grid container>
-                    <Grid container xs={8} md={9} spacing={1} >
+                <Grid container spacing={1}>
+                    <Grid
+                        container
+                        item
+                        xs={8}
+                        md={9}
+                        spacing={1}>
                         {
                             languages.map((lang) =>
-                                <Grid item key={lang}>
+                                <Grid
+                                    key={lang}
+                                    item
+                                    sx={{
+                                        display: 'flex',
+                                        alignItems: 'center'
+                                    }}>
                                     <Chip
                                         label={lang}
                                         color={palette.mode === 'dark' ? "primary" : "secondary"}
@@ -88,7 +99,9 @@ const Project = ({
                         }
                     </Grid>
                     <Grid
-                        container xs={4}
+                        container
+                        item
+                        xs={4}
                         md={3}
                         direction="column"
                         spacing={2}>

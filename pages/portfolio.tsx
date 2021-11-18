@@ -1,9 +1,11 @@
-import { Container, Grid, Box } from '@mui/material'
+import { Container, Grid, Box, useTheme } from '@mui/material'
 import Project from '../components/project'
 import Title from '../components/Title'
 import { myProjects } from '../components/Consts'
 
 const Portfolio = () => {
+    const { palette } = useTheme()
+    const { mode } = palette
     return (
         <Box
             component="section"
@@ -36,7 +38,13 @@ const Portfolio = () => {
                                 >
                                     <Project
                                         description={project.description}
-                                        images={project.images[0]}
+                                        image={
+                                            project.image2 ?
+                                                mode === 'dark'
+                                                    ? project.image2
+                                                    : project.image
+                                                : project.image
+                                        }
                                         languages={project.languages}
                                         title={project.title}
                                         direction={i % 2 === 1 ? false : true}

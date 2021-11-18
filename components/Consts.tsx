@@ -7,7 +7,8 @@ interface Tech {
 interface Project {
     title: string;
     description: string;
-    images: string[];
+    image: string;
+    image2?: string;
     languages: string[];
     demo: string;
     github: string;
@@ -45,10 +46,12 @@ import {
 } from 'react-icons/si';
 
 export const aboutMe: string[] = [
-    'Desarrollador Full Stack residente de Jujuy - Argentina',
-    'Amante de la programación, disfruto mucho trabajar en equipo',
-    'Puedo aportar soluciones óptimas en poco tiempo',
-    'Estoy abierto a la relocalización'
+    'Desarrollador Frontend / Full Stack residente en Jujuy - Argentina.',
+    'Graduado del Bootcamp de Soy Henry.',
+    'Amante de la programación, disfruto mucho trabajar en equipo.',
+    'Puedo aportar soluciones óptimas en poco tiempo.',
+    'Me encuentro reforzando conocimientos en React Native.',
+    'Estoy abierto a la relocalización.',
 ]
 
 
@@ -75,15 +78,20 @@ export const techs: Tech[] = [
 ]
 export const myProjects: Project[] = [
     {
+        title: 'Portafolio',
+        description: `Portafolio de proyectos personal en el cual podrás ver mis trabajos y proyectos en los cual he trabajado, fue desarrollado con tecnologías que fui aprendiendo a la par.`,
+        image: '/portfolio.png',
+        image2: '/portfolio2.png',
+        languages: ['Next.js', 'TypeScript', 'Material UI'],
+        demo: 'https://arcadepedia-maxi.web.app/',
+        github: 'https://github.com/mlmaxi98/Arcadepedia',
+    },
+    {
         title: 'Arcadepedia',
         description: `Aplicación creada con React.js, Redux.js y SCSS en la cual puedes buscar juegos que estén disponibles
         en la API de RAWG.IO, ver sus detalles e ímagenes, filtrarlos por género y ordenarlos de distintas
         maneras.`,
-        images: [
-            'https://i.ibb.co/NrKRRht/Countries-APP-images.png',
-            'https://i.ibb.co/2M52hYV/ordenado.png',
-            'https://i.ibb.co/4Vrp0RM/detalles.png'
-        ],
+        image: '/arcadepedia.png',
         languages: ['React.js', 'Redux.js', 'SCSS'],
         demo: 'https://arcadepedia-maxi.web.app/',
         github: 'https://github.com/mlmaxi98/Arcadepedia',
@@ -92,12 +100,9 @@ export const myProjects: Project[] = [
         title: 'Tech Store',
         description: `Desarrollo de una Aplicación usando SCRUM y aplicando las tecnologías aprendidas durante el
         cursado del Bootcamp.`,
-        images: [
-            'https://i.ibb.co/4Vrp0RM/detalles.png',
-            'https://i.ibb.co/NrKRRht/Countries-APP-images.png',
-            'https://i.ibb.co/2M52hYV/ordenado.png',
-        ],
-        languages: ['React.js', 'Redux.js', 'Node.js', 'SCSS', 'Supabase'],
+        image: '/techstore2.png',
+        image2: '/techstore.png',
+        languages: ['React.js', 'Redux.js', 'SCSS', 'Supabase'],
         demo: 'https://henrystechstore.web.app/',
         github: '',
     },
@@ -106,15 +111,13 @@ export const myProjects: Project[] = [
         description: `Aplicación creada con React, Redux y Styled Components para el Frontend. Esta aplicación consume
         datos de una base de datos que fueron cargados desde una API a través de un Backend creado con
         Express.`,
-        images: [
-            'https://i.ibb.co/NrKRRht/Countries-APP-images.png',
-            'https://i.ibb.co/2M52hYV/ordenado.png',
-        ],
+        image: '/moretrips.png',
         languages: [
             'React.js',
             'Redux.js',
             'Styled - Components',
             'Node.js',
+            'Express.js',
             'Sequelize',
             'PostgreSQL',
         ],
@@ -126,11 +129,7 @@ export const myProjects: Project[] = [
         description: `Aplicación creada con React, Redux y Styled Components para el Frontend. Esta aplicación consume
         datos de una base de datos que fueron cargados desde una API a través de un Backend creado con
         Express.`,
-        images: [
-            'https://i.ibb.co/vHqx6Xz/clima2.png',
-            'https://i.ibb.co/NrKRRht/Countries-APP-images.png',
-            'https://i.ibb.co/4Vrp0RM/detalles.png'
-        ],
+        image: '/clima.png',
         languages: ['React.js', 'Redux.js', 'SCSS'],
         demo: 'https://weather-app-914dd.web.app/',
         github: 'https://github.com/mlmaxi98/Weather-App',
