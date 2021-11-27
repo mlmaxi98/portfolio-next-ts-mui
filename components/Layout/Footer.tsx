@@ -27,7 +27,8 @@ const Footer = () => {
                     sx={{ fontWeight: 700 }}
                 >
                     {'© '}
-                    <Link color="inherit" href="https://www.instagram.com/mlmaxi98/">
+                    <Link color="inherit" target="_blank"
+                        href="https://www.linkedin.com/in/joaquin-cardozo/">
                         Joaquín Maxi Cardozo
                     </Link>{' '}
                     {new Date().getFullYear()}.
