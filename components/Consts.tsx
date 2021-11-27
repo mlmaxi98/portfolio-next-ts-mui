@@ -98,7 +98,7 @@ export const myProjects: Project[] = [
     },
     {
         title: 'Tech Store',
-        description: `Desarrollo de una Aplicación usando SCRUM y aplicando las tecnologías aprendidas durante el
+        description: `Desarrollo de una Aplicación usando SCRUM y aplicando las tecnologías aprendidas durante el 
         cursado del Bootcamp. Desarrollé mis actividades como Frontend Developer, usando SCSS para la estilización de sus componentes.`,
         image: '/techstore2.png',
         image2: '/techstore.png',
@@ -108,9 +108,7 @@ export const myProjects: Project[] = [
     },
     {
         title: 'More Trips!',
-        description: `Aplicación creada con React, Redux y Styled Components para el Frontend. Esta aplicación consume
-        datos de una base de datos que fueron cargados desde una API a través de un Backend creado con
-        Express. (En reparación)`,
+        description: `Aplicación con la cual podras consultar información de múltiples paises, ordenarlo y filtrarlos, así como también crear actividades en ellos que son cargados en una base de datos.`,
         image: '/moretrips.png',
         languages: [
             'React.js',
