@@ -119,7 +119,7 @@ export const myProjects: Project[] = [
             'Sequelize',
             'PostgreSQL',
         ],
-        demo: 'https://maxi-countries.web.app/',
+        demo: 'https://more-trips.vercel.app/',
         github: 'https://github.com/mlmaxi98/More-Trips',
     },
     {
