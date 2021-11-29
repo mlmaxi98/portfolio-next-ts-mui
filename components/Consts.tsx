@@ -124,10 +124,10 @@ export const myProjects: Project[] = [
     },
     {
         title: 'Weather App',
-        description: `Aplicación sencilla creada con React y SCSS con la cual podrás consultar el estado clímatico de muchas ciudades (En reparación)`,
+        description: `Aplicación sencilla creada con React y SCSS con la cual podrás consultar el estado clímatico de muchas ciudades.`,
         image: '/clima.png',
         languages: ['React.js', 'SCSS'],
-        demo: 'https://weather-app-914dd.web.app/',
+        demo: 'https://weather-app-mlmaxi98.vercel.app/',
         github: 'https://github.com/mlmaxi98/Weather-App',
     },
 ]
